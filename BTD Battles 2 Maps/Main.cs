@@ -32,8 +32,8 @@ namespace BTDBattles2Maps
 {
     public class Main : BloonsMod
     {
-        public override string MelonInfoCsURL => "info";
-        public override string LatestURL => "info";
+        public override string MelonInfoCsURL => "https://raw.githubusercontent.com/GMConio/BTD6Mods/main/BTD%20Battles%202%20Maps/Properties/AssemblyInfo.cs";
+        public override string LatestURL => "https://github.com/GMConio/BTD6Mods/blob/main/BTD%20Battles%202%20Maps/BTD%20Battles%202%20Maps.dll?raw=true";
 
         private bool First = true;
 
