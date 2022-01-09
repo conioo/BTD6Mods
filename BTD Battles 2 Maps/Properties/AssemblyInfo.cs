@@ -15,7 +15,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: MelonInfo(typeof(BTDBattles2Maps.Main), "BTD Battles 2 Map", "1.0.0", "Adek")]
+[assembly: MelonInfo(typeof(BTDBattles2Maps.Main), "BTD Battles 2 Map", "1.1.0", "Adek")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 
