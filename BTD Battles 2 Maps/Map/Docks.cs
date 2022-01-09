@@ -97,32 +97,35 @@ namespace BTDBattles2Maps.Maps
             var mainLand = new Il2CppSystem.Collections.Generic.List<Assets.Scripts.Simulation.SMath.Vector2>();
             var water = new Il2CppSystem.Collections.Generic.List<Assets.Scripts.Simulation.SMath.Vector2>();
             var track = new Il2CppSystem.Collections.Generic.List<Assets.Scripts.Simulation.SMath.Vector2>();
-            var crates = new Il2CppSystem.Collections.Generic.List<Assets.Scripts.Simulation.SMath.Vector2>();
             var anchor = new Il2CppSystem.Collections.Generic.List<Assets.Scripts.Simulation.SMath.Vector2>();
             var wheel = new Il2CppSystem.Collections.Generic.List<Assets.Scripts.Simulation.SMath.Vector2>();
+            var crates0 = new Il2CppSystem.Collections.Generic.List<Assets.Scripts.Simulation.SMath.Vector2>();
+            var crates1 = new Il2CppSystem.Collections.Generic.List<Assets.Scripts.Simulation.SMath.Vector2>();
 
             mainLand.Add(new Assets.Scripts.Simulation.SMath.Vector2(-149.9f, -115.5f));
             mainLand.Add(new Assets.Scripts.Simulation.SMath.Vector2(150.1f, -115.5f));
             mainLand.Add(new Assets.Scripts.Simulation.SMath.Vector2(150.1f, 115.5f));
             mainLand.Add(new Assets.Scripts.Simulation.SMath.Vector2(-149.9f, 115.5f));
 
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-105.0, (float)12.0));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-107.8, (float)45.1));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-66.4, (float)42.1));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-55.5, (float)46.6));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-46.6, (float)63.1));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-26.6, (float)55.9));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-30.2, (float)44.5));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)0.5, (float)42.1));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-1.0, (float)11.1));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-37.2, (float)11.4));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-27.1, (float)1.2));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-39.8, (float)-16.2));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-51.8, (float)-9.3));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-52.9, (float)-13.5));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-73.2, (float)-8.4));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-74.0, (float)9.6));
-            crates.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-105.0, (float)12.0));
+            crates1.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-49.2, (float)50.2));
+            crates1.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-50.3, (float)52.9));
+            crates1.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-49.5, (float)58.3));
+            crates1.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-46.4, (float)61.6));
+            crates1.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-44.3, (float)65.6));
+            crates1.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-27.1, (float)56.5));
+            crates1.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-30.2, (float)42.1));
+            crates1.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-48.7, (float)49.3));
+
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-72.1, (float)-7.8));
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-51.0, (float)-13.8));
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-51.0, (float)-10.2));
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-38.0, (float)-15.9));
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-26.6, (float)0.9));
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-37.5, (float)10.8));
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-46.4, (float)0.0));
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-68.2, (float)6.6));
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-72.1, (float)2.4));
+            crates0.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-74.2, (float)-5.1));
 
             anchor.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-61.7, (float)-56.2));
             anchor.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-60.7, (float)-34.9));
@@ -268,8 +271,9 @@ namespace BTDBattles2Maps.Maps
             newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), 10, AreaType.land));
             newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(water), 10, AreaType.water));
             newAreas.Add(new AreaModel("track0", new Assets.Scripts.Simulation.SMath.Polygon(track), 10, AreaType.track));
+            newAreas.Add(new AreaModel("track0", new Assets.Scripts.Simulation.SMath.Polygon(crates0), 10, AreaType.unplaceable));
+            newAreas.Add(new AreaModel("track0", new Assets.Scripts.Simulation.SMath.Polygon(crates1), 10, AreaType.unplaceable));
 
-            newAreas.Add(new AreaModel("crates0", new Assets.Scripts.Simulation.SMath.Polygon(crates), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
             newAreas.Add(new AreaModel("anchor0", new Assets.Scripts.Simulation.SMath.Polygon(anchor), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
             newAreas.Add(new AreaModel("wheel0", new Assets.Scripts.Simulation.SMath.Polygon(wheel), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
 

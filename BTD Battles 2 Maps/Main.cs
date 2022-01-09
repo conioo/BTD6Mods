@@ -27,6 +27,9 @@ using Il2CppSystem.Reflection;
 using Assets.Scripts.Unity.UI_New.Main.MapSelect;
 using Assets.Scripts.Unity.Player;
 using NinjaKiwi.Common;
+using Assets.Scripts.Simulation.Towers;
+using Assets.Scripts.Models.Rounds;
+using Assets.Scripts.Models.Bloons;
 
 namespace BTDBattles2Maps
 {
@@ -42,6 +45,7 @@ namespace BTDBattles2Maps
             base.OnApplicationStart();
         }
         static string LastMap = null;
+        static bool isRestart = false;
 
         static bool isCustom(string map)
         {
@@ -49,12 +53,24 @@ namespace BTDBattles2Maps
         }
 
         static MapInfo[] mapList = new MapInfo[]
-        {
-            new MapInfo("CastleRuins", MapDifficulty.Beginner, Maps.CastleRuins.pathmodel(), Maps.CastleRuins.spawner(), Maps.CastleRuins.areas(), "MusicDarkA", "Castle Ruins"),
-            new MapInfo("Docks", MapDifficulty.Beginner, Maps.Docks.pathmodel(), Maps.Docks.spawner(), Maps.Docks.areas(), "MusicDarkA", "Docks"),
+        {         
+            new MapInfo("Docks", MapDifficulty.Beginner, Maps.Docks.pathmodel(), Maps.Docks.spawner(), Maps.Docks.areas(), "MusicDarkA", "Docks"),          
+            new MapInfo("BasaltColumns", MapDifficulty.Beginner, Maps.BasaltColumns.pathmodel(), Maps.BasaltColumns.spawner(), Maps.BasaltColumns.areas(), "MusicDarkA", "Basalt Columns"),
+            new MapInfo("Garden", MapDifficulty.Beginner, Maps.Garden.pathmodel(), Maps.Garden.spawner(), Maps.Garden.areas(), "MusicDarkA", "Garden"),
+            new MapInfo("Koru", MapDifficulty.Beginner, Maps.Koru.pathmodel(), Maps.Koru.spawner(), Maps.Koru.areas(), "MusicDarkA", "Koru"),
+            new MapInfo("Mayan", MapDifficulty.Beginner, Maps.Mayan.pathmodel(), Maps.Mayan.spawner(), Maps.Mayan.areas(), "MusicDarkA", "Mayan"),
+            new MapInfo("SandsOfTime", MapDifficulty.Beginner, Maps.SandsOfTime.pathmodel(), Maps.SandsOfTime.spawner(), Maps.SandsOfTime.areas(), "MusicDarkA", "Sands Of Time"),            
+            new MapInfo("InTheWall", MapDifficulty.Beginner, Maps.InTheWall.pathmodel(), Maps.InTheWall.spawner(), Maps.InTheWall.areas(), "MusicDarkA", "In The Wall"),
             new MapInfo("BloontoniumMines", MapDifficulty.Beginner, Maps.BloontoniumMines.pathmodel(), Maps.BloontoniumMines.spawner(), Maps.BloontoniumMines.areas(), "MusicDarkA", "Bloontonium Mines"),
-            new MapInfo("InTheWall", MapDifficulty.Beginner, Maps.InTheWall.pathmodel(), Maps.InTheWall.spawner(), Maps.InTheWall.areas(), "MusicDarkA", "InTheWall")
+            new MapInfo("CastleRuins", MapDifficulty.Beginner, Maps.CastleRuins.pathmodel(), Maps.CastleRuins.spawner(), Maps.CastleRuins.areas(), "MusicDarkA", "Castle Ruins"),
+            new MapInfo("Glade", MapDifficulty.Beginner, Maps.Glade.pathmodel(), Maps.Glade.spawner(), Maps.Glade.areas(), "MusicDarkA", "Glade"),
+            new MapInfo("DinoGraveyard", MapDifficulty.Beginner, Maps.DinoGraveyard.pathmodel(), Maps.DinoGraveyard.spawner(), Maps.DinoGraveyard.areas(), "MusicDarkA", "Dino Graveyard"),
+
+            new MapInfo("InTheWallDouble", MapDifficulty.Intermediate, Maps.InTheWallDouble.pathmodel(), Maps.InTheWallDouble.spawner(), Maps.InTheWallDouble.areas(), "MusicDarkA", "In The Wall Double"),
+            new MapInfo("BloontoniumMinesDouble", MapDifficulty.Intermediate, Maps.BloontoniumMinesDouble.pathmodel(), Maps.BloontoniumMinesDouble.spawner(), Maps.BloontoniumMinesDouble.areas(), "MusicDarkA", "Bloontonium Mines Double"),
+            new MapInfo("CastleRuinsDouble", MapDifficulty.Intermediate, Maps.CastleRuinsDouble.pathmodel(), Maps.CastleRuinsDouble.spawner(), Maps.CastleRuinsDouble.areas(), "MusicDarkA", "Castle Ruins Double"),
         };
+
 
         [HarmonyPatch(typeof(TitleScreen), "Start")]
         public class Awake_Patch
@@ -91,13 +107,14 @@ namespace BTDBattles2Maps
             internal static bool Fix(ref MapLoader __instance, ref string map, ref CoopDivision coopDivisionType, ref Il2CppSystem.Action<MapModel> loadedCallback)
             {
                 LastMap = map;
+                isRestart = false;
+
                 if (isCustom(LastMap))
                 {
                     map = "MuddyPuddles";
                 }
                 return true;
             }
-
         }
 
         public override void OnUpdate()
@@ -107,11 +124,11 @@ namespace BTDBattles2Maps
             bool inAGame = InGame.instance != null && InGame.instance.bridge != null;
 
             if (First && inAGame)
-            {                
+            {
                 foreach (var mapData in mapList)
-                {                      
+                {
                     if (!Game.instance.GetBtd6Player().IsMapUnlocked(mapData.name))
-                    {                       
+                    {
                         Game.instance.GetBtd6Player().UnlockMap(mapData.name);
                         InGame.instance.Player.UnlockMap(mapData.name);
                     }
@@ -125,11 +142,13 @@ namespace BTDBattles2Maps
         {
             [HarmonyPrefix]
             internal static bool Prefix(UnityToSimulation __instance, ref MapModel map)
-            {
-                if (!isCustom(LastMap))
+            {                           
+                if (!isCustom(LastMap) || isRestart)
                 {
                     return true;
                 }
+
+                isRestart = true;
 
                 MapInfo mapdata = mapList.Where(x => x.name == LastMap).First();
                 Texture2D tex = ModContent.GetTexture<Main>(mapdata.name);
@@ -175,7 +194,7 @@ namespace BTDBattles2Maps
                 map.paths = mapdata.paths;
                 map.name = mapdata.name;
                 map.mapName = mapdata.name;
-
+                
                 if (GameObject.Find("Rain"))
                 {
                     GameObject.Find("Rain").active = false;
