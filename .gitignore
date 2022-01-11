@@ -1,7 +1,4 @@
 bin/
 obj/
-
 *.vs
-*.sln
-*.csproj
 *.csproj.user
