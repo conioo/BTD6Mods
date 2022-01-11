@@ -16,9 +16,9 @@ namespace BTD6_Random_Monkeys_5_5_5.BloonsMod
     {
         bool FirstLoaded = true;
 
-        public override string MelonInfoCsURL => "https://raw.githubusercontent.com/doombubbles/BTD6-Mods/main/AutoEscape/Main.cs";
+        public override string MelonInfoCsURL => "https://raw.githubusercontent.com/GMConio/BTD6Mods/main/BTD6RandomMonkeys555/Properties/AssemblyInfo.cs";
 
-        public override string LatestURL => "https://github.com/doombubbles/BTD6-Mods/blob/main/AutoEscape/AutoEscape.dll?raw=true";
+        public override string LatestURL => "https://github.com/GMConio/BTD6Mods/blob/main/BTD6RandomMonkeys555/BTD6RandomMonkeys555.dll?raw=true";
 
         public static readonly ModSettingBool EnableMod = true;
         public static readonly ModSettingBool EnableSeed = false;

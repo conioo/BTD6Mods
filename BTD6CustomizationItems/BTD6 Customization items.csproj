@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BTD6_Customization_items</RootNamespace>
-    <AssemblyName>BTD6 Customization items</AssemblyName>
+    <AssemblyName>BTD6CustomizationItems</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

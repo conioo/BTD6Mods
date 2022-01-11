@@ -5,9 +5,9 @@ namespace BTD6SafeMonkey
 {
     class Main : BloonsTD6Mod
     {
-        public override string MelonInfoCsURL => "https://raw.githubusercontent.com/doombubbles/BTD6-Mods/main/AutoEscape/Main.cs";
+        public override string MelonInfoCsURL => "https://raw.githubusercontent.com/GMConio/BTD6Mods/main/BTD6SafeMonkey/Properties/AssemblyInfo.cs";
 
-        public override string LatestURL => "https://github.com/doombubbles/BTD6-Mods/blob/main/AutoEscape/AutoEscape.dll?raw=false";
+        public override string LatestURL => "https://github.com/GMConio/BTD6Mods/blob/main/BTD6SafeMonkey/BTD6SafeMonkey.dll?raw=true";
 
         public override void OnApplicationStart()
         {
