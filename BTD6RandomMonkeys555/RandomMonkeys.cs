@@ -12,6 +12,10 @@ namespace BTD6_Random_Monkeys_5_5_5.MonkeysRandomGenerator
         static private readonly (bool, int)[] Converter = new (bool, int)[20];
         static private readonly (bool, int)[] ConverterLite = new (bool, int)[20];
 
+        static private readonly int[] TierRange = new int[6];
+
+        // true    __X
+        // false   _XX
         static GeneratorMonkeys()
         {
             Converter[0] = (false, 5);
@@ -35,6 +39,11 @@ namespace BTD6_Random_Monkeys_5_5_5.MonkeysRandomGenerator
             Converter[18] = (false, 1);
             Converter[19] = (true, 0);
 
+            TierRange[1] = 16;
+            TierRange[2] = 11;
+            TierRange[3] = 4;
+            TierRange[4] = 1;
+            TierRange[5] = 0;
 
             ConverterLite[0] = (false, 4);
             ConverterLite[1] = (false, 4);
@@ -99,8 +108,8 @@ namespace BTD6_Random_Monkeys_5_5_5.MonkeysRandomGenerator
 
             int mainPath = RandomGenerator.Next(3);
 
-            int firstRandomTier = RandomGenerator.Next(_tier + 1);
-            int secondRandomTier = RandomGenerator.Next(_tier + 1);
+            int firstRandomTier = Converter[RandomGenerator.Next(TierRange[_tier], numberConverters)].Item2;
+            int secondRandomTier = Converter[RandomGenerator.Next(TierRange[_tier], numberConverters)].Item2;
 
             if (mainPath == 0)
             {
@@ -123,8 +132,7 @@ namespace BTD6_Random_Monkeys_5_5_5.MonkeysRandomGenerator
             int firstPath = RandomGenerator.Next(3);
             int secondPath = RandomGenerator.Next(2);
 
-            int randomTier = RandomGenerator.Next(_tier + 1);
-
+            int randomTier = Converter[RandomGenerator.Next(TierRange[_tier], numberConverters)].Item2;
 
             if (firstPath == 0)
             {
@@ -170,7 +178,7 @@ namespace BTD6_Random_Monkeys_5_5_5.MonkeysRandomGenerator
         {
             int index = RandomGenerator.Next(numberConverters);
 
-            if(Converter[index].Item1)
+            if (Converter[index].Item1)
             {
                 return GetTowerModel__x(Converter[index].Item2);
             }
