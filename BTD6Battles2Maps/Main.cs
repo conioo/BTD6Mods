@@ -65,12 +65,13 @@ namespace BTDBattles2Maps
             new MapInfo("CastleRuins", MapDifficulty.Beginner, Maps.CastleRuins.pathmodel(), Maps.CastleRuins.spawner(), Maps.CastleRuins.areas(), "MusicDarkA", "Castle Ruins"),
             new MapInfo("Glade", MapDifficulty.Beginner, Maps.Glade.pathmodel(), Maps.Glade.spawner(), Maps.Glade.areas(), "MusicDarkA", "Glade"),
             new MapInfo("DinoGraveyard", MapDifficulty.Beginner, Maps.DinoGraveyard.pathmodel(), Maps.DinoGraveyard.spawner(), Maps.DinoGraveyard.areas(), "MusicDarkA", "Dino Graveyard"),
+            new MapInfo("Inflection", MapDifficulty.Beginner, Maps.Inflection.pathmodel(), Maps.Inflection.spawner(), Maps.Inflection.areas(), "MusicDarkA", "Inflection"),
+            new MapInfo("Ports", MapDifficulty.Beginner, Maps.Ports.pathmodel(), Maps.Ports.spawner(), Maps.Ports.areas(), "MusicDarkA", "Ports"),
 
             new MapInfo("InTheWallDouble", MapDifficulty.Intermediate, Maps.InTheWallDouble.pathmodel(), Maps.InTheWallDouble.spawner(), Maps.InTheWallDouble.areas(), "MusicDarkA", "In The Wall Double"),
             new MapInfo("BloontoniumMinesDouble", MapDifficulty.Intermediate, Maps.BloontoniumMinesDouble.pathmodel(), Maps.BloontoniumMinesDouble.spawner(), Maps.BloontoniumMinesDouble.areas(), "MusicDarkA", "Bloontonium Mines Double"),
             new MapInfo("CastleRuinsDouble", MapDifficulty.Intermediate, Maps.CastleRuinsDouble.pathmodel(), Maps.CastleRuinsDouble.spawner(), Maps.CastleRuinsDouble.areas(), "MusicDarkA", "Castle Ruins Double"),
         };
-
 
         [HarmonyPatch(typeof(TitleScreen), "Start")]
         public class Awake_Patch
@@ -117,11 +118,48 @@ namespace BTDBattles2Maps
             }
         }
 
+        /*public override void OnUpdate()
+        {
+            base.OnUpdate();
+
+            bool inAGame = InGame.instance != null && InGame.instance.bridge != null;
+
+            if (First && inAGame)
+            {
+                foreach (var mapData in mapList)
+                {
+                    if (!Game.instance.GetBtd6Player().IsMapUnlocked(mapData.name))
+                    {
+                        Game.instance.GetBtd6Player().UnlockMap(mapData.name);
+                        InGame.instance.Player.UnlockMap(mapData.name);
+                    }
+                }
+                First = false;
+            }
+        }*/
+
         public override void OnUpdate()
         {
             base.OnUpdate();
 
             bool inAGame = InGame.instance != null && InGame.instance.bridge != null;
+
+            bool flag = inAGame && Input.GetKeyDown(KeyCode.Mouse1);
+            bool flag2 = inAGame && Input.GetKeyDown(KeyCode.F1);
+
+            if (flag)
+            {
+                InputManager inputManager = InGame.instance.inputManager;
+                if (inputManager != null)
+                {
+                    MelonLogger.Msg(inputManager.cursorPositionWorld.ToString());
+                }
+            }
+
+            if (flag2)
+            {
+                MelonLogger.Msg("BTD_Battles_2_MapBTD_Battles_2_MapBTD_Battles_2_MapBTD_Battles_2_MapBTD_Battles_2_Map");
+            }
 
             if (First && inAGame)
             {

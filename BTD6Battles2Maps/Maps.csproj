@@ -92,6 +92,8 @@
     <Compile Include="Map\InTheWall.cs" />
     <Compile Include="Map\Glade.cs" />
     <Compile Include="Map\DinoGraveyard.cs" />
+    <Compile Include="Map\Ports.cs" />
+    <Compile Include="Map\Inflection.cs" />
     <Compile Include="Map\SandsOfTime.cs" />
     <Compile Include="Map\other.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,8 +120,14 @@
   <ItemGroup>
     <EmbeddedResource Include="Image\InTheWall.png" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Image\Ports.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Image\Inflection.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "D:\Steam Gry\steamapps\common\BloonsTD6\Mods" /y</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods" /y</PostBuildEvent>
   </PropertyGroup>
 </Project>
