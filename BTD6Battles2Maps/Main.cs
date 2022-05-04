@@ -35,8 +35,8 @@ namespace BTDBattles2Maps
 {
     public class Main : BloonsMod
     {
-        public override string MelonInfoCsURL => "https://raw.githubusercontent.com/GMConio/BTD6Mods/main/BTD6Battles2Maps/Properties/AssemblyInfo.cs";
-        public override string LatestURL => "https://github.com/GMConio/BTD6Mods/blob/main/BTD6Battles2Maps/BTDBattles2Maps.dll?raw=true";
+        public override string MelonInfoCsURL => "https://raw.githubusercontent.com/conioo/BTD6Mods/main/BTD6Battles2Maps/Properties/AssemblyInfo.cs";
+        public override string LatestURL => "https://github.com/conioo/BTD6Mods/blob/main/BTD6Battles2Maps/BTDBattles2Maps.dll?raw=true";
 
         private bool First = true;
 
@@ -54,12 +54,12 @@ namespace BTDBattles2Maps
 
         static MapInfo[] mapList = new MapInfo[]
         {         
-            new MapInfo("Docks", MapDifficulty.Beginner, Maps.Docks.pathmodel(), Maps.Docks.spawner(), Maps.Docks.areas(), "MusicDarkA", "Docks"),          
+            new MapInfo("Docks", MapDifficulty.Beginner, Maps.Docks.pathmodel(), Maps.Docks.spawner(), Maps.Docks.areas(), "MusicDarkA", "Docks"),
             new MapInfo("BasaltColumns", MapDifficulty.Beginner, Maps.BasaltColumns.pathmodel(), Maps.BasaltColumns.spawner(), Maps.BasaltColumns.areas(), "MusicDarkA", "Basalt Columns"),
             new MapInfo("Garden", MapDifficulty.Beginner, Maps.Garden.pathmodel(), Maps.Garden.spawner(), Maps.Garden.areas(), "MusicDarkA", "Garden"),
             new MapInfo("Koru", MapDifficulty.Beginner, Maps.Koru.pathmodel(), Maps.Koru.spawner(), Maps.Koru.areas(), "MusicDarkA", "Koru"),
             new MapInfo("Mayan", MapDifficulty.Beginner, Maps.Mayan.pathmodel(), Maps.Mayan.spawner(), Maps.Mayan.areas(), "MusicDarkA", "Mayan"),
-            new MapInfo("SandsOfTime", MapDifficulty.Beginner, Maps.SandsOfTime.pathmodel(), Maps.SandsOfTime.spawner(), Maps.SandsOfTime.areas(), "MusicDarkA", "Sands Of Time"),            
+            new MapInfo("SandsOfTime", MapDifficulty.Beginner, Maps.SandsOfTime.pathmodel(), Maps.SandsOfTime.spawner(), Maps.SandsOfTime.areas(), "MusicDarkA", "Sands Of Time"),
             new MapInfo("InTheWall", MapDifficulty.Beginner, Maps.InTheWall.pathmodel(), Maps.InTheWall.spawner(), Maps.InTheWall.areas(), "MusicDarkA", "In The Wall"),
             new MapInfo("BloontoniumMines", MapDifficulty.Beginner, Maps.BloontoniumMines.pathmodel(), Maps.BloontoniumMines.spawner(), Maps.BloontoniumMines.areas(), "MusicDarkA", "Bloontonium Mines"),
             new MapInfo("CastleRuins", MapDifficulty.Beginner, Maps.CastleRuins.pathmodel(), Maps.CastleRuins.spawner(), Maps.CastleRuins.areas(), "MusicDarkA", "Castle Ruins"),
@@ -101,42 +101,22 @@ namespace BTDBattles2Maps
             }
         }
 
-        [HarmonyPatch(typeof(MapLoader), nameof(MapLoader.Load))]
+        [HarmonyPatch(typeof(MapLoader), nameof(MapLoader.LoadScene))]
         public class LoadMap
         {
             [HarmonyPrefix]
-            internal static bool Fix(ref MapLoader __instance, ref string map, ref CoopDivision coopDivisionType, ref Il2CppSystem.Action<MapModel> loadedCallback)
+            internal static bool Fix(ref MapLoader __instance)
             {
-                LastMap = map;
+                LastMap = __instance.currentMapName;
                 isRestart = false;
 
                 if (isCustom(LastMap))
                 {
-                    map = "MuddyPuddles";
+                    __instance.currentMapName = "MuddyPuddles";
                 }
                 return true;
             }
         }
-
-        /*public override void OnUpdate()
-        {
-            base.OnUpdate();
-
-            bool inAGame = InGame.instance != null && InGame.instance.bridge != null;
-
-            if (First && inAGame)
-            {
-                foreach (var mapData in mapList)
-                {
-                    if (!Game.instance.GetBtd6Player().IsMapUnlocked(mapData.name))
-                    {
-                        Game.instance.GetBtd6Player().UnlockMap(mapData.name);
-                        InGame.instance.Player.UnlockMap(mapData.name);
-                    }
-                }
-                First = false;
-            }
-        }*/
 
         public override void OnUpdate()
         {
@@ -144,23 +124,6 @@ namespace BTDBattles2Maps
 
             bool inAGame = InGame.instance != null && InGame.instance.bridge != null;
 
-            bool flag = inAGame && Input.GetKeyDown(KeyCode.Mouse1);
-            bool flag2 = inAGame && Input.GetKeyDown(KeyCode.F1);
-
-            if (flag)
-            {
-                InputManager inputManager = InGame.instance.inputManager;
-                if (inputManager != null)
-                {
-                    MelonLogger.Msg(inputManager.cursorPositionWorld.ToString());
-                }
-            }
-
-            if (flag2)
-            {
-                MelonLogger.Msg("BTD_Battles_2_MapBTD_Battles_2_MapBTD_Battles_2_MapBTD_Battles_2_MapBTD_Battles_2_Map");
-            }
-
             if (First && inAGame)
             {
                 foreach (var mapData in mapList)
@@ -174,6 +137,43 @@ namespace BTDBattles2Maps
                 First = false;
             }
         }
+
+        //public override void OnUpdate()
+        //{
+        //    base.OnUpdate();
+
+        //    bool inAGame = InGame.instance != null && InGame.instance.bridge != null;
+
+        //    bool flag = inAGame && Input.GetKeyDown(KeyCode.Mouse1);
+        //    bool flag2 = inAGame && Input.GetKeyDown(KeyCode.F1);
+
+        //    if (flag)
+        //    {
+        //        InputManager inputManager = InGame.instance.inputManager;
+        //        if (inputManager != null)
+        //        {
+        //            MelonLogger.Msg(inputManager.cursorPositionWorld.ToString());
+        //        }
+        //    }
+
+        //    if (flag2)
+        //    {
+        //        MelonLogger.Msg("BTD_Battles_2_MapBTD_Battles_2_MapBTD_Battles_2_MapBTD_Battles_2_MapBTD_Battles_2_Map");
+        //    }
+
+        //    if (First && inAGame)
+        //    {
+        //        foreach (var mapData in mapList)
+        //        {
+        //            if (!Game.instance.GetBtd6Player().IsMapUnlocked(mapData.name))
+        //            {
+        //                Game.instance.GetBtd6Player().UnlockMap(mapData.name);
+        //                InGame.instance.Player.UnlockMap(mapData.name);
+        //            }
+        //        }
+        //        First = false;
+        //    }
+        //}
 
         [HarmonyPatch(typeof(UnityToSimulation), nameof(UnityToSimulation.InitMap))]
         internal class InitMap_Patch
@@ -240,6 +240,11 @@ namespace BTDBattles2Maps
 
                 return true;
             }
+        }
+
+        public static Il2CppReferenceArray<Assets.Scripts.Simulation.SMath.Polygon> Empty()
+        {
+            return new Il2CppReferenceArray<Assets.Scripts.Simulation.SMath.Polygon>(0);
         }
     }
 }

@@ -31,11 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
+    <Reference Include="0Harmony, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.2.1\lib\net472\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="BloonsTD6 Mod Helper">
-      <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BloonsTD6 Mod Helper, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
@@ -79,23 +84,22 @@
     <Compile Include="Main.cs" />
     <Compile Include="MapHelper.cs" />
     <Compile Include="MapInfo.cs" />
-    <Compile Include="Map\BloontoniumMinesDouble.cs" />
-    <Compile Include="Map\CastleRuinsDouble.cs" />
-    <Compile Include="Map\Docks.cs" />
-    <Compile Include="Map\InTheWallDouble.cs" />
     <Compile Include="Map\BasaltColumns.cs" />
+    <Compile Include="Map\BloontoniumMines.cs" />
+    <Compile Include="Map\BloontoniumMinesDouble.cs" />
+    <Compile Include="Map\CastleRuins.cs" />
+    <Compile Include="Map\CastleRuinsDouble.cs" />
+    <Compile Include="Map\DinoGraveyard.cs" />
+    <Compile Include="Map\Docks.cs" />
     <Compile Include="Map\Garden.cs" />
+    <Compile Include="Map\Glade.cs" />
+    <Compile Include="Map\Inflection.cs" />
+    <Compile Include="Map\InTheWall.cs" />
+    <Compile Include="Map\InTheWallDouble.cs" />
     <Compile Include="Map\Koru.cs" />
     <Compile Include="Map\Mayan.cs" />
-    <Compile Include="Map\BloontoniumMines.cs" />
-    <Compile Include="Map\CastleRuins.cs" />
-    <Compile Include="Map\InTheWall.cs" />
-    <Compile Include="Map\Glade.cs" />
-    <Compile Include="Map\DinoGraveyard.cs" />
     <Compile Include="Map\Ports.cs" />
-    <Compile Include="Map\Inflection.cs" />
     <Compile Include="Map\SandsOfTime.cs" />
-    <Compile Include="Map\other.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +129,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Image\Inflection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

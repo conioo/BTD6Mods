@@ -494,18 +494,18 @@ namespace BTDBattles2Maps.Maps
             area4.Add(new Assets.Scripts.Simulation.SMath.Vector2(68.70372f, 115f));
             area4.Add(new Assets.Scripts.Simulation.SMath.Vector2(63.33334f, 108.8241f));
 
-            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), 10, AreaType.land));
-            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(waterRight), 10, AreaType.water));
-            newAreas.Add(new AreaModel("water1", new Assets.Scripts.Simulation.SMath.Polygon(waterLeft), 10, AreaType.water));
-            newAreas.Add(new AreaModel("track1", new Assets.Scripts.Simulation.SMath.Polygon(track), 10, AreaType.track));
+            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), Main.Empty(), 10, AreaType.land));
+            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(waterRight), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("water1", new Assets.Scripts.Simulation.SMath.Polygon(waterLeft), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("track1", new Assets.Scripts.Simulation.SMath.Polygon(track), Main.Empty(), 10, AreaType.track));
 
-            newAreas.Add(new AreaModel("stone0", new Assets.Scripts.Simulation.SMath.Polygon(stoneLeft), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("stone1", new Assets.Scripts.Simulation.SMath.Polygon(stoneRight), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("bush0", new Assets.Scripts.Simulation.SMath.Polygon(bushTop), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("bush1", new Assets.Scripts.Simulation.SMath.Polygon(bushLeft), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("bush2", new Assets.Scripts.Simulation.SMath.Polygon(bushRight), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crates0", new Assets.Scripts.Simulation.SMath.Polygon(cratesLeft), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crates1", new Assets.Scripts.Simulation.SMath.Polygon(cratesRight), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("stone0", new Assets.Scripts.Simulation.SMath.Polygon(stoneLeft), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("stone1", new Assets.Scripts.Simulation.SMath.Polygon(stoneRight), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("bush0", new Assets.Scripts.Simulation.SMath.Polygon(bushTop), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("bush1", new Assets.Scripts.Simulation.SMath.Polygon(bushLeft), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("bush2", new Assets.Scripts.Simulation.SMath.Polygon(bushRight), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crates0", new Assets.Scripts.Simulation.SMath.Polygon(cratesLeft), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crates1", new Assets.Scripts.Simulation.SMath.Polygon(cratesRight), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
 
             return (Il2CppReferenceArray<AreaModel>)newAreas.ToArray();
         }

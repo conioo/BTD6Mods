@@ -201,14 +201,14 @@ namespace BTDBattles2Maps.Maps
             sewers.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)1.8, (float)55.0));
             sewers.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)0.3, (float)-55.3));
 
-            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), 10, AreaType.land));
-            newAreas.Add(new AreaModel("track0", new Assets.Scripts.Simulation.SMath.Polygon(track), 10, AreaType.track));
-            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(water0), 10, AreaType.water));
-            newAreas.Add(new AreaModel("water1", new Assets.Scripts.Simulation.SMath.Polygon(water1), 10, AreaType.water));
-            newAreas.Add(new AreaModel("water2", new Assets.Scripts.Simulation.SMath.Polygon(water2), 10, AreaType.water));
-            newAreas.Add(new AreaModel("containers0", new Assets.Scripts.Simulation.SMath.Polygon(containers0), 10, AreaType.unplaceable));
-            newAreas.Add(new AreaModel("containers1", new Assets.Scripts.Simulation.SMath.Polygon(containers1), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("sewers", new Assets.Scripts.Simulation.SMath.Polygon(sewers), 10, AreaType.unplaceable));
+            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), Main.Empty(), 10, AreaType.land));
+            newAreas.Add(new AreaModel("track0", new Assets.Scripts.Simulation.SMath.Polygon(track), Main.Empty(), 10, AreaType.track));
+            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(water0), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("water1", new Assets.Scripts.Simulation.SMath.Polygon(water1), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("water2", new Assets.Scripts.Simulation.SMath.Polygon(water2), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("containers0", new Assets.Scripts.Simulation.SMath.Polygon(containers0), Main.Empty(), 10, AreaType.unplaceable));
+            newAreas.Add(new AreaModel("containers1", new Assets.Scripts.Simulation.SMath.Polygon(containers1), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("sewers", new Assets.Scripts.Simulation.SMath.Polygon(sewers), Main.Empty(), 10, AreaType.unplaceable));
 
             return (Il2CppReferenceArray<AreaModel>)newAreas.ToArray();
         }

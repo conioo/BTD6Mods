@@ -224,21 +224,21 @@ namespace BTDBattles2Maps.Maps
             track.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-149.9, (float)68.6));
 
 
-            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), 10, AreaType.land));
-            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(waterLeft), 10, AreaType.water));
-            newAreas.Add(new AreaModel("water1", new Assets.Scripts.Simulation.SMath.Polygon(waterRight), 10, AreaType.water));
-            newAreas.Add(new AreaModel("crystal0", new Assets.Scripts.Simulation.SMath.Polygon(crystal0), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal1", new Assets.Scripts.Simulation.SMath.Polygon(crystal1), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal2", new Assets.Scripts.Simulation.SMath.Polygon(crystal2), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal3", new Assets.Scripts.Simulation.SMath.Polygon(crystal3), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal4", new Assets.Scripts.Simulation.SMath.Polygon(crystal4), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal5", new Assets.Scripts.Simulation.SMath.Polygon(crystal5), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal6", new Assets.Scripts.Simulation.SMath.Polygon(crystal6), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal7", new Assets.Scripts.Simulation.SMath.Polygon(crystal7), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal8", new Assets.Scripts.Simulation.SMath.Polygon(crystal8), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal9", new Assets.Scripts.Simulation.SMath.Polygon(crystal9), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("crystal10", new Assets.Scripts.Simulation.SMath.Polygon(crystal10), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("track", new Assets.Scripts.Simulation.SMath.Polygon(track), 10, AreaType.track));
+            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), Main.Empty(), 10, AreaType.land));
+            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(waterLeft), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("water1", new Assets.Scripts.Simulation.SMath.Polygon(waterRight), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("crystal0", new Assets.Scripts.Simulation.SMath.Polygon(crystal0), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal1", new Assets.Scripts.Simulation.SMath.Polygon(crystal1), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal2", new Assets.Scripts.Simulation.SMath.Polygon(crystal2), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal3", new Assets.Scripts.Simulation.SMath.Polygon(crystal3), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal4", new Assets.Scripts.Simulation.SMath.Polygon(crystal4), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal5", new Assets.Scripts.Simulation.SMath.Polygon(crystal5), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal6", new Assets.Scripts.Simulation.SMath.Polygon(crystal6), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal7", new Assets.Scripts.Simulation.SMath.Polygon(crystal7), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal8", new Assets.Scripts.Simulation.SMath.Polygon(crystal8), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal9", new Assets.Scripts.Simulation.SMath.Polygon(crystal9), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("crystal10", new Assets.Scripts.Simulation.SMath.Polygon(crystal10), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("track", new Assets.Scripts.Simulation.SMath.Polygon(track), Main.Empty(), 10, AreaType.track));
 
 
             //newAreas.Add(new AreaModel("bush2", new Assets.Scripts.Simulation.SMath.Polygon(bushRight), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));

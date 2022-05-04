@@ -200,9 +200,9 @@ namespace BTDBattles2Maps.Maps
             mainLand.Add(new Assets.Scripts.Simulation.SMath.Vector2(-149.9f, 115.5f));
 
 
-            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), 10, AreaType.land));
-            newAreas.Add(new AreaModel("track", new Assets.Scripts.Simulation.SMath.Polygon(track), 10, AreaType.track));
-            newAreas.Add(new AreaModel("water", new Assets.Scripts.Simulation.SMath.Polygon(water), 10, AreaType.water));
+            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), Main.Empty(), 10, AreaType.land));
+            newAreas.Add(new AreaModel("track", new Assets.Scripts.Simulation.SMath.Polygon(track), Main.Empty(), 10, AreaType.track));
+            newAreas.Add(new AreaModel("water", new Assets.Scripts.Simulation.SMath.Polygon(water), Main.Empty(), 10, AreaType.water));
 
             return (Il2CppReferenceArray<AreaModel>)newAreas.ToArray();
         }

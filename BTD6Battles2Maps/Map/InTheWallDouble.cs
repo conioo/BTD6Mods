@@ -248,15 +248,15 @@ namespace BTDBattles2Maps.Maps
             track.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-37.2, (float)115.5));
 
 
-            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), 10, AreaType.land));
-            newAreas.Add(new AreaModel("track", new Assets.Scripts.Simulation.SMath.Polygon(track), 10, AreaType.track));
-            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(water0), 10, AreaType.water));
-            newAreas.Add(new AreaModel("water1", new Assets.Scripts.Simulation.SMath.Polygon(water1), 10, AreaType.water));
-            newAreas.Add(new AreaModel("water2", new Assets.Scripts.Simulation.SMath.Polygon(water2), 10, AreaType.water));
-            newAreas.Add(new AreaModel("water3", new Assets.Scripts.Simulation.SMath.Polygon(water3), 10, AreaType.water));
+            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), Main.Empty(), 10, AreaType.land));
+            newAreas.Add(new AreaModel("track", new Assets.Scripts.Simulation.SMath.Polygon(track), Main.Empty(), 10, AreaType.track));
+            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(water0), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("water1", new Assets.Scripts.Simulation.SMath.Polygon(water1), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("water2", new Assets.Scripts.Simulation.SMath.Polygon(water2), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("water3", new Assets.Scripts.Simulation.SMath.Polygon(water3), Main.Empty(), 10, AreaType.water));
 
-            newAreas.Add(new AreaModel("wall0", new Assets.Scripts.Simulation.SMath.Polygon(wall0), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("wall1", new Assets.Scripts.Simulation.SMath.Polygon(wall1), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("wall0", new Assets.Scripts.Simulation.SMath.Polygon(wall0), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("wall1", new Assets.Scripts.Simulation.SMath.Polygon(wall1), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
 
             return (Il2CppReferenceArray<AreaModel>)newAreas.ToArray();
         }

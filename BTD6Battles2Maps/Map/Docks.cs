@@ -268,14 +268,14 @@ namespace BTDBattles2Maps.Maps
             water.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-149.9, (float)-114.9));
             water.Add(new Assets.Scripts.Simulation.SMath.Vector2((float)-149.9, (float)95.0));
 
-            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), 10, AreaType.land));
-            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(water), 10, AreaType.water));
-            newAreas.Add(new AreaModel("track0", new Assets.Scripts.Simulation.SMath.Polygon(track), 10, AreaType.track));
-            newAreas.Add(new AreaModel("track0", new Assets.Scripts.Simulation.SMath.Polygon(crates0), 10, AreaType.unplaceable));
-            newAreas.Add(new AreaModel("track0", new Assets.Scripts.Simulation.SMath.Polygon(crates1), 10, AreaType.unplaceable));
+            newAreas.Add(new AreaModel("land0", new Assets.Scripts.Simulation.SMath.Polygon(mainLand), Main.Empty(), 10, AreaType.land));
+            newAreas.Add(new AreaModel("water0", new Assets.Scripts.Simulation.SMath.Polygon(water), Main.Empty(), 10, AreaType.water));
+            newAreas.Add(new AreaModel("track0", new Assets.Scripts.Simulation.SMath.Polygon(track), Main.Empty(), 10, AreaType.track));
+            newAreas.Add(new AreaModel("crates0", new Assets.Scripts.Simulation.SMath.Polygon(crates0), Main.Empty(), 10, AreaType.unplaceable));
+            newAreas.Add(new AreaModel("crates1", new Assets.Scripts.Simulation.SMath.Polygon(crates1), Main.Empty(), 10, AreaType.unplaceable));
 
-            newAreas.Add(new AreaModel("anchor0", new Assets.Scripts.Simulation.SMath.Polygon(anchor), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
-            newAreas.Add(new AreaModel("wheel0", new Assets.Scripts.Simulation.SMath.Polygon(wheel), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("anchor0", new Assets.Scripts.Simulation.SMath.Polygon(anchor), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
+            newAreas.Add(new AreaModel("wheel0", new Assets.Scripts.Simulation.SMath.Polygon(wheel), Main.Empty(), 100, AreaType.unplaceable, 0f, null, null, null, true, false, default));
 
             return (Il2CppReferenceArray<AreaModel>)newAreas.ToArray();
         }
