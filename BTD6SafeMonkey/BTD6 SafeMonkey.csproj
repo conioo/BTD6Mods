@@ -34,8 +34,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="BloonsTD6 Mod Helper">
-      <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
+    <Reference Include="BloonsTD6 Mod Helper, Version=2.4.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
@@ -60,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Display\BulletDisplay.cs" />
+    <Compile Include="Display\ParagonDisplay.cs" />
     <Compile Include="Display\QuincyDisplayOne.cs" />
     <Compile Include="Display\GrenadeDisplay.cs" />
     <Compile Include="Display\QuincyDisplayThree.cs" />
@@ -80,6 +82,7 @@
     <Compile Include="Upgrade\MiddlePath\SafeMonkey0-3-0.cs" />
     <Compile Include="Upgrade\MiddlePath\SafeMonkey0-4-0.cs" />
     <Compile Include="Upgrade\MiddlePath\SafeMonkey0-5-0.cs" />
+    <Compile Include="Upgrade\ParagonUpgrade\SafeMonkeyParagon.cs" />
     <Compile Include="Upgrade\TopPath\SafeMonkey1-0-0.cs" />
     <Compile Include="Upgrade\TopPath\SafeMonkey2-0-0.cs" />
     <Compile Include="Upgrade\TopPath\SafeMonkey3-0-0.cs" />
@@ -114,9 +117,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Image\Icon\ExplosionIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Image\paragon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "D:\Steam Gry\steamapps\common\BloonsTD6\Mods" /y
+    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods" /y
 </PostBuildEvent>
   </PropertyGroup>
 </Project>

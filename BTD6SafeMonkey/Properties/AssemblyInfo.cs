@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: MelonInfo(typeof(BTD6SafeMonkey.Main), "SafeMonkey", "1.2.0", "Adek")]
+[assembly: MelonInfo(typeof(BTD6SafeMonkey.Main), "SafeMonkey", "1.3.0", "Adek")]
 
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
