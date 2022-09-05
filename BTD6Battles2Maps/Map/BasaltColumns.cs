@@ -11,7 +11,6 @@ namespace BTDBattles2Maps.Maps
         public static Il2CppReferenceArray<PointInfo> mainTrack()
         {
             List<PointInfo> list = new List<PointInfo>();
-            //list.Add(new PointInfo() { bloonScale = 1, bloonsInvulnerable = false, distance = 1, id = r.NextDouble() + "", moabScale = 1, moabsInvulnerable = false, rotation = 0, point = new Assets.Scripts.Simulation.SMath.Vector3(-48.70371f, -113.0834f), bloonSpeedMultiplier = 1 });
             list.Add(MapHelper.AddPoint(-149.9, -96.2));
             list.Add( MapHelper.AddPoint(-78.9, (float)-57.4));
             list.Add( MapHelper.AddPoint(-76.3, (float)-54.4));
