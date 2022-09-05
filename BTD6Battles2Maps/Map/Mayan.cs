@@ -12,29 +12,29 @@ namespace BTDBattles2Maps.Maps
         {
             List<PointInfo> track = new List<PointInfo>();
 
-            track.Add(MapHelper.AddPoint((float)-149.9, (float)-73.7));
-            track.Add(MapHelper.AddPoint((float)-44.0, (float)-72.5));
-            track.Add(MapHelper.AddPoint((float)-43.2, (float)-71.6));
-            track.Add(MapHelper.AddPoint((float)-41.9, (float)-70.1));
-            track.Add(MapHelper.AddPoint((float)-40.6, (float)41.5));
-            track.Add(MapHelper.AddPoint((float)-40.1, (float)45.4));
-            track.Add(MapHelper.AddPoint((float)-38.3, (float)46.3));
-            track.Add(MapHelper.AddPoint((float)83.9, (float)44.5));
-            track.Add(MapHelper.AddPoint((float)85.7, (float)44.2));
-            track.Add(MapHelper.AddPoint((float)86.5, (float)46.6));
-            track.Add(MapHelper.AddPoint((float)87.5, (float)92.9));
-            track.Add(MapHelper.AddPoint((float)86.2, (float)96.8));
-            track.Add(MapHelper.AddPoint((float)82.8, (float)97.4));
-            track.Add(MapHelper.AddPoint((float)28.4, (float)99.5));
-            track.Add(MapHelper.AddPoint((float)26.8, (float)99.5));
-            track.Add(MapHelper.AddPoint((float)21.6, (float)96.5));
-            track.Add(MapHelper.AddPoint((float)22.4, (float)-21.3));
-            track.Add(MapHelper.AddPoint((float)22.1, (float)-24.1));
-            track.Add(MapHelper.AddPoint((float)16.1, (float)-27.4));
-            track.Add(MapHelper.AddPoint((float)-95.3, (float)-28.0));
-            track.Add(MapHelper.AddPoint((float)-98.2, (float)-29.8));
-            track.Add(MapHelper.AddPoint((float)-100.5, (float)-33.4));
-            track.Add(MapHelper.AddPoint((float)-102.9, (float)-114.3));
+            track.Add( MapHelper.AddPoint(-149.9, (float)-73.7));
+            track.Add( MapHelper.AddPoint(-44.0, (float)-72.5));
+            track.Add( MapHelper.AddPoint(-43.2, (float)-71.6));
+            track.Add( MapHelper.AddPoint(-41.9, (float)-70.1));
+            track.Add( MapHelper.AddPoint(-40.6, (float)41.5));
+            track.Add( MapHelper.AddPoint(-40.1, (float)45.4));
+            track.Add( MapHelper.AddPoint(-38.3, (float)46.3));
+            track.Add( MapHelper.AddPoint(83.9, (float)44.5));
+            track.Add( MapHelper.AddPoint(85.7, (float)44.2));
+            track.Add( MapHelper.AddPoint(86.5, (float)46.6));
+            track.Add( MapHelper.AddPoint(87.5, (float)92.9));
+            track.Add( MapHelper.AddPoint(86.2, (float)96.8));
+            track.Add( MapHelper.AddPoint(82.8, (float)97.4));
+            track.Add( MapHelper.AddPoint(28.4, (float)99.5));
+            track.Add( MapHelper.AddPoint(26.8, (float)99.5));
+            track.Add( MapHelper.AddPoint(21.6, (float)96.5));
+            track.Add( MapHelper.AddPoint(22.4, (float)-21.3));
+            track.Add( MapHelper.AddPoint(22.1, (float)-24.1));
+            track.Add( MapHelper.AddPoint(16.1, (float)-27.4));
+            track.Add( MapHelper.AddPoint(-95.3, (float)-28.0));
+            track.Add( MapHelper.AddPoint(-98.2, (float)-29.8));
+            track.Add( MapHelper.AddPoint(-100.5, (float)-33.4));
+            track.Add( MapHelper.AddPoint(-102.9, (float)-114.3));
 
 
             return (Il2CppReferenceArray<PointInfo>)track.ToArray();
@@ -44,29 +44,29 @@ namespace BTDBattles2Maps.Maps
         {
             List<PointInfo> track = new List<PointInfo>();
 
-            track.Add(MapHelper.AddPoint((float)-102.9, (float)-114.3));
-            track.Add(MapHelper.AddPoint((float)-100.5, (float)-33.4));
-            track.Add(MapHelper.AddPoint((float)-98.2, (float)-29.8));
-            track.Add(MapHelper.AddPoint((float)-95.3, (float)-28.0));
-            track.Add(MapHelper.AddPoint((float)16.1, (float)-27.4));
-            track.Add(MapHelper.AddPoint((float)22.1, (float)-24.1));
-            track.Add(MapHelper.AddPoint((float)22.4, (float)-21.3));
-            track.Add(MapHelper.AddPoint((float)21.6, (float)96.5));
-            track.Add(MapHelper.AddPoint((float)26.8, (float)99.5));
-            track.Add(MapHelper.AddPoint((float)28.4, (float)99.5));
-            track.Add(MapHelper.AddPoint((float)82.8, (float)97.4));
-            track.Add(MapHelper.AddPoint((float)86.2, (float)96.8));
-            track.Add(MapHelper.AddPoint((float)87.5, (float)92.9));
-            track.Add(MapHelper.AddPoint((float)86.5, (float)46.6));
-            track.Add(MapHelper.AddPoint((float)85.7, (float)44.2));
-            track.Add(MapHelper.AddPoint((float)83.9, (float)44.5));
-            track.Add(MapHelper.AddPoint((float)-38.3, (float)46.3));
-            track.Add(MapHelper.AddPoint((float)-40.1, (float)45.4));
-            track.Add(MapHelper.AddPoint((float)-40.6, (float)41.5));
-            track.Add(MapHelper.AddPoint((float)-41.9, (float)-70.1));
-            track.Add(MapHelper.AddPoint((float)-43.2, (float)-71.6));
-            track.Add(MapHelper.AddPoint((float)-44.0, (float)-72.5));
-            track.Add(MapHelper.AddPoint((float)-149.9, (float)-73.7));
+            track.Add( MapHelper.AddPoint(-102.9, (float)-114.3));
+            track.Add( MapHelper.AddPoint(-100.5, (float)-33.4));
+            track.Add( MapHelper.AddPoint(-98.2, (float)-29.8));
+            track.Add( MapHelper.AddPoint(-95.3, (float)-28.0));
+            track.Add( MapHelper.AddPoint(16.1, (float)-27.4));
+            track.Add( MapHelper.AddPoint(22.1, (float)-24.1));
+            track.Add( MapHelper.AddPoint(22.4, (float)-21.3));
+            track.Add( MapHelper.AddPoint(21.6, (float)96.5));
+            track.Add( MapHelper.AddPoint(26.8, (float)99.5));
+            track.Add( MapHelper.AddPoint(28.4, (float)99.5));
+            track.Add( MapHelper.AddPoint(82.8, (float)97.4));
+            track.Add( MapHelper.AddPoint(86.2, (float)96.8));
+            track.Add( MapHelper.AddPoint(87.5, (float)92.9));
+            track.Add( MapHelper.AddPoint(86.5, (float)46.6));
+            track.Add( MapHelper.AddPoint(85.7, (float)44.2));
+            track.Add( MapHelper.AddPoint(83.9, (float)44.5));
+            track.Add( MapHelper.AddPoint(-38.3, (float)46.3));
+            track.Add( MapHelper.AddPoint(-40.1, (float)45.4));
+            track.Add( MapHelper.AddPoint(-40.6, (float)41.5));
+            track.Add( MapHelper.AddPoint(-41.9, (float)-70.1));
+            track.Add( MapHelper.AddPoint(-43.2, (float)-71.6));
+            track.Add( MapHelper.AddPoint(-44.0, (float)-72.5));
+            track.Add( MapHelper.AddPoint(-149.9, (float)-73.7));
 
             return (Il2CppReferenceArray<PointInfo>)track.ToArray();
         }

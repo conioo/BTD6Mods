@@ -12,17 +12,17 @@ namespace BTDBattles2Maps.Maps
         {
             List<PointInfo> list = new List<PointInfo>();
 
-            list.Add(MapHelper.AddPoint((float)-149.9, (float)105.5));
-            list.Add(MapHelper.AddPoint((float)-134.9, (float)97.7));
-            list.Add(MapHelper.AddPoint((float)107.0, (float)-75.8));
-            list.Add(MapHelper.AddPoint((float)111.2, (float)-76.1));
-            list.Add(MapHelper.AddPoint((float)113.8, (float)-72.2));
-            list.Add(MapHelper.AddPoint((float)114.8, (float)71.6));
-            list.Add(MapHelper.AddPoint((float)112.8, (float)75.8));
-            list.Add(MapHelper.AddPoint((float)109.1, (float)77.3));
-            list.Add(MapHelper.AddPoint((float)104.4, (float)75.8));
-            list.Add(MapHelper.AddPoint((float)-135.4, (float)-96.8));
-            list.Add(MapHelper.AddPoint((float)-149.9, (float)-107.4));
+            list.Add( MapHelper.AddPoint(-149.9, (float)105.5));
+            list.Add( MapHelper.AddPoint(-134.9, (float)97.7));
+            list.Add( MapHelper.AddPoint(107.0, (float)-75.8));
+            list.Add( MapHelper.AddPoint(111.2, (float)-76.1));
+            list.Add( MapHelper.AddPoint(113.8, (float)-72.2));
+            list.Add( MapHelper.AddPoint(114.8, (float)71.6));
+            list.Add( MapHelper.AddPoint(112.8, (float)75.8));
+            list.Add( MapHelper.AddPoint(109.1, (float)77.3));
+            list.Add( MapHelper.AddPoint(104.4, (float)75.8));
+            list.Add( MapHelper.AddPoint(-135.4, (float)-96.8));
+            list.Add( MapHelper.AddPoint(-149.9, (float)-107.4));
 
             return (Il2CppReferenceArray<PointInfo>)list.ToArray();
         }
@@ -31,16 +31,16 @@ namespace BTDBattles2Maps.Maps
         {
             List<PointInfo> list = new List<PointInfo>();
 
-            list.Add(MapHelper.AddPoint((float)150.0, (float)-105.8));
-            list.Add(MapHelper.AddPoint((float)-104.4, (float)77.3));
-            list.Add(MapHelper.AddPoint((float)-108.9, (float)79.1));
-            list.Add(MapHelper.AddPoint((float)-111.5, (float)76.1));
-            list.Add(MapHelper.AddPoint((float)-113.5, (float)71.9));
-            list.Add(MapHelper.AddPoint((float)-113.5, (float)-71.6));
-            list.Add(MapHelper.AddPoint((float)-112.8, (float)-74.0));
-            list.Add(MapHelper.AddPoint((float)-109.6, (float)-76.1));
-            list.Add(MapHelper.AddPoint((float)-105.2, (float)-74.0));
-            list.Add(MapHelper.AddPoint((float)150.0, (float)107.4));
+            list.Add( MapHelper.AddPoint(150.0, (float)-105.8));
+            list.Add( MapHelper.AddPoint(-104.4, (float)77.3));
+            list.Add( MapHelper.AddPoint(-108.9, (float)79.1));
+            list.Add( MapHelper.AddPoint(-111.5, (float)76.1));
+            list.Add( MapHelper.AddPoint(-113.5, (float)71.9));
+            list.Add( MapHelper.AddPoint(-113.5, (float)-71.6));
+            list.Add( MapHelper.AddPoint(-112.8, (float)-74.0));
+            list.Add( MapHelper.AddPoint(-109.6, (float)-76.1));
+            list.Add( MapHelper.AddPoint(-105.2, (float)-74.0));
+            list.Add( MapHelper.AddPoint(150.0, (float)107.4));
 
             return (Il2CppReferenceArray<PointInfo>)list.ToArray();
         }
