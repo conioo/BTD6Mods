@@ -84,22 +84,23 @@
     <Compile Include="Main.cs" />
     <Compile Include="MapHelper.cs" />
     <Compile Include="MapInfo.cs" />
-    <Compile Include="Map\BasaltColumns.cs" />
-    <Compile Include="Map\BloontoniumMines.cs" />
-    <Compile Include="Map\BloontoniumMinesDouble.cs" />
-    <Compile Include="Map\CastleRuins.cs" />
-    <Compile Include="Map\CastleRuinsDouble.cs" />
-    <Compile Include="Map\DinoGraveyard.cs" />
-    <Compile Include="Map\Docks.cs" />
-    <Compile Include="Map\Garden.cs" />
-    <Compile Include="Map\Glade.cs" />
-    <Compile Include="Map\Inflection.cs" />
-    <Compile Include="Map\InTheWall.cs" />
-    <Compile Include="Map\InTheWallDouble.cs" />
-    <Compile Include="Map\Koru.cs" />
-    <Compile Include="Map\Mayan.cs" />
-    <Compile Include="Map\Ports.cs" />
-    <Compile Include="Map\SandsOfTime.cs" />
+    <Compile Include="Maps\BasaltColumns.cs" />
+    <Compile Include="Maps\BloontoniumMines.cs" />
+    <Compile Include="Maps\BloontoniumMinesDouble.cs" />
+    <Compile Include="Maps\CastleRuins.cs" />
+    <Compile Include="Maps\CastleRuinsDouble.cs" />
+    <Compile Include="Maps\DinoGraveyard.cs" />
+    <Compile Include="Maps\Docks.cs" />
+    <Compile Include="Maps\Garden.cs" />
+    <Compile Include="Maps\Glade.cs" />
+    <Compile Include="Maps\Inflection.cs" />
+    <Compile Include="Maps\InTheWall.cs" />
+    <Compile Include="Maps\InTheWallDouble.cs" />
+    <Compile Include="Maps\Koru.cs" />
+    <Compile Include="Maps\Mayan.cs" />
+    <Compile Include="Maps\Ports.cs" />
+    <Compile Include="Maps\SandsOfTime.cs" />
+    <Compile Include="ModHelperData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +136,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods" /y</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6_Mods\Mods" /y
+copy "$(TargetDir)$(TargetFileName)" "$(ProjectDir)" /y</PostBuildEvent>
   </PropertyGroup>
 </Project>

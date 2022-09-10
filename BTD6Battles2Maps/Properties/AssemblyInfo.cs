@@ -1,4 +1,5 @@
-﻿using MelonLoader;
+﻿using BTDBattles2Maps;
+using MelonLoader;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -12,12 +13,12 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: MelonInfo(typeof(BTDBattles2Maps.Main), "BTD Battles 2 Map", "1.3.0", "Adek")]
+[assembly: MelonInfo(typeof(BTDBattles2Maps.Main), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 [assembly: ComVisible(false)]
 
 [assembly: Guid("158a7f69-79ba-4f8b-a729-6b54d94d87c9")]
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion(ModHelperData.Version)]
+[assembly: AssemblyFileVersion(ModHelperData.Version)]
