@@ -10,7 +10,7 @@
         public const string RepoOwner = "conioo";
         public const string RepoName = "BTD6Mods";
 
-        public const string SubPath = "BTDBattles2Maps";
+        public const string SubPath = "main/BTDBattles2Maps";
         public const string DllName = "BTDBattles2Maps.dll";
     }
 }
