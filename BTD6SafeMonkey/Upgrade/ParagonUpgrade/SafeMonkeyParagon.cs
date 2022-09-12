@@ -60,14 +60,14 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
             grenadeProjectileModel.AddBehavior(new DamageModifierForTagModel("AdditionalFortifiedDamage", "Fortified", 2, 200000, false, false));
 
             attackModel.AddWeapon(grenadeAttack);
-
-            towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+            
             towerModel.range += 90;
             towerModel.radiusSquared += 90;
 
             var reflection = Game.instance.model.GetTower(TowerType.SniperMonkey, 0, 3, 0).GetAttackModel().weapons[0].projectile.GetBehavior<RetargetOnContactModel>().Duplicate();
             reflection.distance = 800;
             grenadeProjectileModel.AddBehavior(reflection);
+            towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
         }
     }
 }
