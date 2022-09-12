@@ -10,6 +10,8 @@
         public const string RepoOwner = "conioo";
         public const string RepoName = "BTD6Mods";
 
+        public const string Icon = "Image\\Icon\\SafeIcon.png";
+
         public const string SubPath = "main/BTD6SafeMonkey";
         public const string DllName = "BTD6SafeMonkey.dll";
     }
