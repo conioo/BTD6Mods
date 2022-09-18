@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Unity;
+using Assets.Scripts.Unity.UI_New.InGame;
+using BTD_Mod_Helper.Extensions;
 using System;
 using System.Collections.Generic;
 
@@ -113,15 +114,15 @@ namespace BTD6_Random_Monkeys_5_5_5.MonkeysRandomGenerator
 
             if (mainPath == 0)
             {
-                return Game.instance.model.GetTower(towerType, _tier, firstRandomTier, secondRandomTier);
+                return InGameExt.GetGameModel(InGame.instance).GetTower(towerType, _tier, firstRandomTier, secondRandomTier);
             }
             else if (mainPath == 1)
             {
-                return Game.instance.model.GetTower(towerType, firstRandomTier, _tier, secondRandomTier);
+                return InGameExt.GetGameModel(InGame.instance).GetTower(towerType, firstRandomTier, _tier, secondRandomTier);
             }
             else
             {
-                return Game.instance.model.GetTower(towerType, firstRandomTier, secondRandomTier, _tier);
+                return InGameExt.GetGameModel(InGame.instance).GetTower(towerType, firstRandomTier, secondRandomTier, _tier);
             }
         }
 
@@ -138,40 +139,40 @@ namespace BTD6_Random_Monkeys_5_5_5.MonkeysRandomGenerator
             {
                 if (secondPath == 0)
                 {
-                    return Game.instance.model.GetTower(towerType, _tier, _tier, randomTier);
+                    return InGameExt.GetGameModel(InGame.instance).GetTower(towerType, _tier, _tier, randomTier);
                 }
                 else
                 {
-                    return Game.instance.model.GetTower(towerType, _tier, randomTier, _tier);
+                    return InGameExt.GetGameModel(InGame.instance).GetTower(towerType, _tier, randomTier, _tier);
                 }
             }
             else if (firstPath == 1)
             {
                 if (secondPath == 0)
                 {
-                    return Game.instance.model.GetTower(towerType, _tier, _tier, randomTier);
+                    return InGameExt.GetGameModel(InGame.instance).GetTower(towerType, _tier, _tier, randomTier);
                 }
                 else
                 {
-                    return Game.instance.model.GetTower(towerType, randomTier, _tier, _tier);
+                    return InGameExt.GetGameModel(InGame.instance).GetTower(towerType, randomTier, _tier, _tier);
                 }
             }
             else
             {
                 if (secondPath == 0)
                 {
-                    return Game.instance.model.GetTower(towerType, _tier, randomTier, _tier);
+                    return InGameExt.GetGameModel(InGame.instance).GetTower(towerType, _tier, randomTier, _tier);
                 }
                 else
                 {
-                    return Game.instance.model.GetTower(towerType, randomTier, _tier, _tier);
+                    return InGameExt.GetGameModel(InGame.instance).GetTower(towerType, randomTier, _tier, _tier);
                 }
             }
         }
 
         static internal TowerModel GetTowerModelTier0()
         {
-            return Game.instance.model.GetTower(GetMonkey(), 0, 0, 0);
+            return InGameExt.GetGameModel(InGame.instance).GetTower(GetMonkey(), 0, 0, 0);
         }
 
         static internal TowerModel GetTowerModelRandom()
