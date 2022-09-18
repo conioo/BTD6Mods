@@ -2,7 +2,7 @@
 {
     public static class ModHelperData
     {
-        public const string Version = "1.4.2";
+        public const string Version = "1.4.3";
         public const string Name = "RandomMonkeys";
 
         public const string Description = "Adds 8 new random monkeys";
