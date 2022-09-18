@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BTD6_Customization_items</RootNamespace>
     <AssemblyName>BTD6CustomizationItems</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,56 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="BloonsTD6 Mod Helper, Version=2.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
-    </Reference>
-    <Reference Include="Il2Cppmscorlib">
-      <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MelonLoader">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\MelonLoader.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Core">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.CSharp">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Data">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Net.Http">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Xml">
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnhollowerBaseLib">
-      <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\MelonLoader\Managed\UnhollowerBaseLib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\..\..\..\..\Steam Gry\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Display\BuildingDisplay.cs" />
     <Compile Include="Display\CottageDisplay.cs" />
     <Compile Include="Display\FactoryDisplay.cs" />
@@ -91,22 +42,24 @@
     <Compile Include="Items\Building.cs" />
     <Compile Include="Items\Tree.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="ModHelperData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Image\TreeImage.png" />
+    <None Include="Image\TreeImage.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Image\ItemsContainer.png" />
+    <None Include="Image\ItemsContainer.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Image\BuildingImage.png" />
-    <EmbeddedResource Include="Image\ButtonItems.png" />
-    <EmbeddedResource Include="Image\CottageImage.png" />
-    <EmbeddedResource Include="Image\FactoryImage.png" />
+    <None Include="Image\BuildingImage.png" />
+    <None Include="Image\ButtonItems.png" />
+    <None Include="Image\CottageImage.png" />
+    <None Include="Image\FactoryImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "D:\Steam Gry\steamapps\common\BloonsTD6\Mods" /y</PostBuildEvent>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "$(ProjectDir)" /y</PostBuildEvent>
   </PropertyGroup>
+  <Import Project="..\btd6.targets" />
 </Project>

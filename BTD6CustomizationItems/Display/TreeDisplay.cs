@@ -2,6 +2,7 @@
 using BTD_Mod_Helper.Api.Display;
 using Assets.Scripts.Models.Towers;
 using BTD_Mod_Helper.Extensions;
+using MelonLoader;
 
 namespace BTD6_Customization_items.Display
 {
@@ -15,8 +16,10 @@ namespace BTD6_Customization_items.Display
 
         public override void ModifyDisplayNode(UnityDisplayNode node)
         {
-            node.RemoveBone("BananaFarm_Rig:Root");
+           // node.PrintInfo();
+
             node.RemoveBone("BananaFarm_Rig:Bananas");
+            //node.RemoveBone("BananaFarm_Rig:Root");
         }
     }
 }
