@@ -12,7 +12,7 @@
 
         public const string Icon = "Image/TreeImage.png";
 
-        public const string SubPath = "main/BTD6CustomizationItems";
+        public const string SubPath = "BTD6CustomizationItems";
         public const string DllName = "BTD6CustomizationItems.dll";
     }
 }

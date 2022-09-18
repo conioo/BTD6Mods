@@ -12,7 +12,7 @@
 
         public const string Icon = "Image/RandomButton.png";
 
-        public const string SubPath = "main/RandomMonkeys";
+        public const string SubPath = "RandomMonkeys";
         public const string DllName = "RandomMonkeys.dll";
     }
 }
