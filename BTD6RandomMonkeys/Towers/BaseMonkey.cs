@@ -9,6 +9,7 @@ using Il2CppAssets.Scripts.Models.Map;
 using Il2CppAssets.Scripts.Models.TowerSets;
 using Harmony;
 using HarmonyLib;
+using Il2CppSystem.Dynamic.Utils;
 
 namespace RandomMonkeys.Towers
 {
@@ -37,8 +38,6 @@ namespace RandomMonkeys.Towers
             //newAreaType[1] = AreaType.water;
 
             //towerModel.areaTypes = newAreaType;
-
-            towerModel.areaTypes.AddItem(AreaType.water);
 
             towerModel.ApplyDisplay<RandomDisplay>();
         }
