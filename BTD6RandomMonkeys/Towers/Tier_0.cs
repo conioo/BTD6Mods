@@ -1,8 +1,4 @@
-﻿using Assets.Scripts.Models.TowerSets;
-using BTD_Mod_Helper.Extensions;
-using MelonLoader;
-using RandomMonkeys.DefaultOptions;
-using System.Collections.Generic;
+﻿using RandomMonkeys.DefaultOptions;
 
 namespace RandomMonkeys.Towers
 {

@@ -1,26 +1,12 @@
-﻿using Assets.Scripts.Simulation.Towers;
-using Assets.Scripts.Models.TowerSets;
-using Assets.Scripts.Simulation.Input;
-using Assets.Scripts.Models;
-using Assets.Scripts.Models.Profile;
-using Il2CppSystem.Collections.Generic;
+﻿using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api.ModOptions;
-using BTD_Mod_Helper;
-using MelonLoader;
 using HarmonyLib;
-using RandomMonkeys.MonkeysRandomGenerator;
+using Il2CppAssets.Scripts.Models;
+using Il2CppAssets.Scripts.Simulation.Towers;
+using MelonLoader;
 using RandomMonkeys.DefaultOptions;
 using RandomMonkeys.Events;
-using Assets.Scripts.Simulation.Towers.Behaviors.Attack;
-using Assets.Scripts.Simulation.Objects;
-using RandomMonkeys.Towers;
-using Assets.Main.Scenes;
-using Assets.Scripts.Unity;
-using BTD_Mod_Helper.Extensions;
-using UnityEngine;
-using Assets.Scripts.Unity.UI_New.InGame;
-using Assets.Scripts.Models.Towers;
-using System.Runtime.CompilerServices;
+using RandomMonkeys.MonkeysRandomGenerator;
 
 namespace RandomMonkeys.BloonsMod
 {

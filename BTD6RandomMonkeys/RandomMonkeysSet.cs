@@ -1,10 +1,4 @@
-﻿using Assets.Scripts.Models.GenericBehaviors;
-using Assets.Scripts.Models.TowerSets;
-using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Models.Map;
-using BTD_Mod_Helper.Api.Towers;
-using BTD_Mod_Helper.Extensions;
-using UnhollowerBaseLib;
+﻿using BTD_Mod_Helper.Api.Towers;
 
 namespace RandomMonkeys.Set
 {

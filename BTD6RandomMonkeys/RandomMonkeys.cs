@@ -1,11 +1,10 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Unity;
-using System.Collections.Generic;
-using System;
-using MelonLoader;
-using BTD_Mod_Helper.Api;
-using Assets.Scripts.Unity.UI_New.InGame;
+﻿using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Extensions;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
+using MelonLoader;
+using System;
+using System.Collections.Generic;
 
 namespace RandomMonkeys.MonkeysRandomGenerator
 {

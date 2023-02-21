@@ -1,12 +1,14 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Models.Map;
-using BTD_Mod_Helper.Api.Towers;
+﻿using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
-using UnhollowerBaseLib;
 using RandomMonkeys.Display;
 using RandomMonkeys.Set;
-using Assets.Scripts.Models.TowerSets;
 using System.Collections.Generic;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
+using Il2CppAssets.Scripts.Models.Map;
+using Il2CppAssets.Scripts.Models.TowerSets;
+using Harmony;
+using HarmonyLib;
 
 namespace RandomMonkeys.Towers
 {
@@ -29,12 +31,14 @@ namespace RandomMonkeys.Towers
 
         public override void ModifyBaseTowerModel(TowerModel towerModel)
         {
-            Il2CppStructArray<AreaType> newAreaType = new Il2CppStructArray<AreaType>(2);
+            //Il2CppStructArray<AreaType> newAreaType = new Il2CppStructArray<AreaType>(2);
 
-            newAreaType[0] = AreaType.land;
-            newAreaType[1] = AreaType.water;
+            //newAreaType[0] = AreaType.land;
+            //newAreaType[1] = AreaType.water;
 
-            towerModel.areaTypes = newAreaType;
+            //towerModel.areaTypes = newAreaType;
+
+            towerModel.areaTypes.AddItem(AreaType.water);
 
             towerModel.ApplyDisplay<RandomDisplay>();
         }

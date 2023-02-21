@@ -1,7 +1,5 @@
-﻿using Assets.Scripts.Unity.Display;
-using BTD_Mod_Helper.Api.Display;
-using BTD_Mod_Helper.Extensions;
-using MelonLoader;
+﻿using BTD_Mod_Helper.Api.Display;
+using Il2CppAssets.Scripts.Unity.Display;
 
 namespace RandomMonkeys.Display
 {
