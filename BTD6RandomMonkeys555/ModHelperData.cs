@@ -2,7 +2,9 @@
 {
     public static class ModHelperData
     {
-        public const string Version = "1.1.2";
+        public const string Version = "1.1.3";
+        public const string WorksOnVersion = "34";
+
         public const string Name = "Random Monkeys 5x5x5";
 
         public const string Description = "Adds random monkeys 5x5x5, requires mod:  ultimate crosspathing";

@@ -1,6 +1,6 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Unity.UI_New.InGame;
-using BTD_Mod_Helper.Extensions;
+﻿using BTD_Mod_Helper.Extensions;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using System;
 using System.Collections.Generic;
 

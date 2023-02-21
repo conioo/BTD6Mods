@@ -1,12 +1,11 @@
-﻿using Assets.Scripts.Models;
-using Assets.Scripts.Simulation.Objects;
-using Assets.Scripts.Simulation.Towers;
-using BTD_Mod_Helper;
+﻿using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api.ModOptions;
 using BTD_Mod_Helper.Extensions;
 using BTD6_Random_Monkeys_5_5_5.Events;
 using BTD6_Random_Monkeys_5_5_5.MonkeysRandomGenerator;
-using HarmonyLib;
+using Il2CppAssets.Scripts.Models;
+using Il2CppAssets.Scripts.Simulation.Objects;
+using Il2CppAssets.Scripts.Simulation.Towers;
 using MelonLoader;
 
 namespace BTD6_Random_Monkeys_5_5_5.BloonsMod
@@ -23,10 +22,9 @@ namespace BTD6_Random_Monkeys_5_5_5.BloonsMod
 
         internal static readonly ModSettingInt Seed = 0;
 
-
-        public override void OnLoaderInitialized()
+        public override void OnInitialize()
         {
-            base.OnLoaderInitialized();
+            base.OnInitialize();
 
             EnableMod.OnValueChanged.Add(ModSettingEvents.ChangedStateMod);
             EnableSeed.OnValueChanged.Add(ModSettingEvents.ChangedBooleanSeed);
@@ -34,6 +32,16 @@ namespace BTD6_Random_Monkeys_5_5_5.BloonsMod
 
             MelonLogger.Msg("Mod BTD6_Random_Monkeys 5_5_5 Loaded!");
         }
+        //public override void OnLoaderInitialized()
+        //{
+        //    base.OnLoaderInitialized();
+
+        //    EnableMod.OnValueChanged.Add(ModSettingEvents.ChangedStateMod);
+        //    EnableSeed.OnValueChanged.Add(ModSettingEvents.ChangedBooleanSeed);
+        //    Seed.OnValueChanged.Add(ModSettingEvents.ChangedSeed);
+
+        //    MelonLogger.Msg("Mod BTD6_Random_Monkeys 5_5_5 Loaded!");
+        //}
         public override void OnApplicationStart()
         {
             EnableMod.OnValueChanged.Add(ModSettingEvents.ChangedStateMod);
@@ -59,7 +67,7 @@ namespace BTD6_Random_Monkeys_5_5_5.BloonsMod
         {
             base.OnTowerCreated(tower, target, modelToUse);
 
-            MelonLogger.Msg("dziala tutaj ");
+            //MelonLogger.Msg("dziala tutaj ");
 
             if (modelToUse.name.Contains("Tier") && Main.EnableMod)
             {

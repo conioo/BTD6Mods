@@ -1,16 +1,15 @@
-﻿using Assets.Scripts.Models.Map;
-using Assets.Scripts.Models.Towers;
-using BTD_Mod_Helper.Api.Towers;
+﻿using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using BTD6_Random_Monkeys_5_5_5.DefaultOptions;
 using BTD6_Random_Monkeys_5_5_5.Display;
-using UnhollowerBaseLib;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Models.TowerSets;
 
 namespace BTD6_Random_Monkeys_5_5_5.Towers
 {
     class Tier_0 : ModTower
     {
-        public override string TowerSet => SUPPORT;
+        public override TowerSet TowerSet => TowerSet.Support;
         public override string BaseTower => TowerType.SniperMonkey;
         public override string Description => "Random Tower Tier 0";
 
@@ -21,12 +20,12 @@ namespace BTD6_Random_Monkeys_5_5_5.Towers
 
         public override void ModifyBaseTowerModel(TowerModel towerModel)
         {
-            Il2CppStructArray<AreaType> newAreaType = new Il2CppStructArray<AreaType>(2);
+            //Il2CppStructArray<AreaType> newAreaType = new Il2CppStructArray<AreaType>(2);
 
-            newAreaType[0] = AreaType.land;
-            newAreaType[1] = AreaType.water;
+            //newAreaType[0] = AreaType.land;
+            //newAreaType[1] = AreaType.water;
 
-            towerModel.areaTypes = newAreaType;
+            //towerModel.areaTypes = newAreaType;
 
             towerModel.ApplyDisplay<RandomDisplay>();
         }
