@@ -1,15 +1,15 @@
-﻿using Assets.Scripts.Models.Towers.Behaviors.Attack;
-using Assets.Scripts.Models.GenericBehaviors;
-using Assets.Scripts.Models.TowerSets;
-using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Models.Map;
-using BTD_Mod_Helper.Api.Towers;
+﻿using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
-using UnhollowerBaseLib;
+using Il2CppAssets.Scripts.Models.GenericBehaviors;
+using Il2CppAssets.Scripts.Models.Map;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
+using Il2CppAssets.Scripts.Models.TowerSets;
+using Il2CppInterop.Runtime.InteropTypes.Arrays;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BTD6_Customization_items
+namespace BTD6CustomizationItems.Items
 {
     class Factory : ModTower<ItemsSet>
     {
@@ -27,15 +27,15 @@ namespace BTD6_Customization_items
             towerModel.GetBehavior<DisplayModel>().ignoreRotation = true;
             towerModel.doesntRotate = true;
 
-            var newAreaType = new Il2CppStructArray<AreaType>(5);
+            //var newAreaType = new Il2CppStructArray<AreaType>(5);
 
-            newAreaType[0] = AreaType.unplaceable;
-            newAreaType[1] = AreaType.ice;
-            newAreaType[2] = AreaType.land;
-            newAreaType[3] = AreaType.track;
-            newAreaType[4] = AreaType.water;
+            //newAreaType[0] = AreaType.unplaceable;
+            //newAreaType[1] = AreaType.ice;
+            //newAreaType[2] = AreaType.land;
+            //newAreaType[3] = AreaType.track;
+            //newAreaType[4] = AreaType.water;
 
-            towerModel.areaTypes = newAreaType;
+            //towerModel.areaTypes = newAreaType;
 
             towerModel.radius = 0;
             towerModel.ignoreBlockers = true;

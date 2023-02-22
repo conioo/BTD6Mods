@@ -1,19 +1,18 @@
-﻿using BTD6_Customization_items;
+﻿using BTD6CustomizationItems;
 using MelonLoader;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("BTD6_Customization_items")]
+[assembly: AssemblyTitle("BTD6CustomizationItems")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BTD6_Customization_items")]
+[assembly: AssemblyProduct("BTD6CustomizationItems")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: MelonInfo(typeof(BTD6_Customization_items.Main), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
+[assembly: MelonInfo(typeof(BTD6CustomizationItems.Main), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 [assembly: ComVisible(false)]

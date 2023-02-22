@@ -1,7 +1,6 @@
 ﻿using BTD_Mod_Helper;
-using BTD_Mod_Helper.Api.ModOptions;
 
-namespace BTD6_Customization_items
+namespace BTD6CustomizationItems
 {
     class Main : BloonsTD6Mod
     {

@@ -1,8 +1,9 @@
-﻿namespace BTD6_Customization_items
+﻿namespace BTD6CustomizationItems
 {
     public static class ModHelperData
     {
-        public const string Version = "1.0.2";
+        public const string Version = "1.0.3";
+        public const string WorksOnVersion = "34";
         public const string Name = "Customization items";
 
         public const string Description = "Adds customization items";

@@ -1,9 +1,10 @@
-﻿using Assets.Scripts.Unity.Display;
-using BTD_Mod_Helper.Api.Display;
-using Assets.Scripts.Models.Towers;
+﻿using BTD_Mod_Helper.Api.Display;
 using BTD_Mod_Helper.Extensions;
+using BTD6CustomizationItems.Items;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Unity.Display;
 
-namespace BTD6_Customization_items.Display
+namespace BTD6CustomizationItems.Display
 {
     class BuildingDisplay : ModTowerDisplay<Building>
     {
