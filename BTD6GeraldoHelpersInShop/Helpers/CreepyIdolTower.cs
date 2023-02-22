@@ -1,34 +1,31 @@
-﻿using Assets.Scripts.Models;
-using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Unity;
-using Assets.Scripts.Utils;
-using BTD_Mod_Helper.Api.Towers;
+﻿using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
-using MelonLoader;
-using System;
+using Il2CppAssets.Scripts.Models;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Models.TowerSets;
+using Il2CppAssets.Scripts.Unity;
+using Il2CppAssets.Scripts.Utils;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnhollowerBaseLib;
 
-namespace BTD6GeraldoHelpersInShop
+namespace GeraldoHelpersInShop
 {
-    class CreepyIdolTowerV2 : ModTower
+    class CreepyIdolTower : ModTower
     {
-        public override SpriteReference PortraitReference => Game.instance.model.GetTowerWithName("CreepyIdolTowerV2").portrait;
-        public override SpriteReference IconReference => Game.instance.model.GetTowerWithName("CreepyIdolTowerV2").portrait;
-        public override string TowerSet => SUPPORT;
+        public override SpriteReference PortraitReference => Game.instance.model.towers[22].portrait;
+        //public override SpriteReference PortraitReference => Game.instance.model.GetTowerWithName("CreepyIdolTower").portrait;
+        //public override SpriteReference IconReference => Game.instance.model.GetTowerWithName("CreepyIdolTower").portrait;
+        public override SpriteReference IconReference => Game.instance.model.towers[22].portrait;
+        public override TowerSet TowerSet => TowerSet.Support;
         public override string BaseTower => TowerType.EngineerMonkey;
-        public override int Cost => 400;
+        public override int Cost => 200;
         public override int TopPathUpgrades => 0;
         public override int MiddlePathUpgrades => 0;
         public override int BottomPathUpgrades => 0;
-        public override string Description => "CreepyIdolTowerV2";
-        public override int Order => 103;
+        public override string Description => "CreepyIdolTower";
+        protected override int Order => 102;
         public override void ModifyBaseTowerModel(TowerModel towerModel)
         {
-            var model = Game.instance.model.GetTowerWithName("CreepyIdolTowerV2");
+            var model = Game.instance.model.GetTowerWithName("CreepyIdolTower");
 
             towerModel.display = model.display;
             towerModel.mods = model.mods.Duplicate();
@@ -65,6 +62,7 @@ namespace BTD6GeraldoHelpersInShop
                 }
             }
             towerModel.behaviors = list.ToArray();
+
         }
     }
 }

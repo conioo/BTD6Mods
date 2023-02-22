@@ -1,44 +1,32 @@
-﻿using Assets.Scripts.Models;
-using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Unity;
-using Assets.Scripts.Utils;
-using BTD_Mod_Helper.Api.Towers;
+﻿using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
-using MelonLoader;
-using System;
-using Assets.Scripts.Unity.Bridge;
-using Assets.Scripts.Unity.Display;
-using Assets.Scripts.Unity.UI_New.InGame;
-using BTD_Mod_Helper;
-using BTD_Mod_Helper.Api;
-using BTD_Mod_Helper.Api.Display;
-using HarmonyLib;
-using Il2CppSystem;
-using UnityEngine;
-using Il2CppNewtonsoft.Json;
-using Il2CppNewtonsoft.Json.Converters;
+using Il2CppAssets.Scripts.Models;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Models.TowerSets;
+using Il2CppAssets.Scripts.Unity;
+using Il2CppAssets.Scripts.Utils;
+using System.Collections.Generic;
 
-namespace BTD6GeraldoHelpersInShop
+namespace GeraldoHelpersInShop
 {
-    class ShootyTurretTower : ModTower
+    class GenieBottleTowerV2 : ModTower
     {
-        public override SpriteReference PortraitReference => Game.instance.model.GetTowerWithName("ShootyTurretTower").portrait;
-        public override SpriteReference IconReference => Game.instance.model.GetTowerWithName("ShootyTurretTower").portrait;
-        public override string TowerSet => SUPPORT;
+        public override SpriteReference PortraitReference => Game.instance.model.GetTowerWithName("GenieBottleTowerV2").portrait;
+        public override SpriteReference IconReference => Game.instance.model.GetTowerWithName("GenieBottleTowerV2").portrait;
+        public override TowerSet TowerSet => TowerSet.Support;
         public override string BaseTower => TowerType.EngineerMonkey;
-        public override int Cost => 400;
+        public override int Cost => 30000;
         public override int TopPathUpgrades => 0;
         public override int MiddlePathUpgrades => 0;
         public override int BottomPathUpgrades => 0;
-        public override string Description => "ShootyTurretTower";
-        public override int Order => 100;
+        public override string Description => "GenieBottleTowerV2";
+        protected override int Order => 107;
         public override void ModifyBaseTowerModel(TowerModel towerModel)
         {
-            var model = Game.instance.model.GetTowerWithName("ShootyTurretTower");
+            var model = Game.instance.model.GetTowerWithName("GenieBottleTowerV2");
 
             towerModel.display = model.display;
             towerModel.mods = model.mods.Duplicate();
-            towerModel.behaviors = model.behaviors.Duplicate();
             towerModel.footprint = model.footprint.Duplicate();
             towerModel.targetTypes = model.targetTypes.Duplicate();
             towerModel.TargetTypes = model.TargetTypes.Duplicate();
@@ -63,11 +51,17 @@ namespace BTD6GeraldoHelpersInShop
             towerModel.powerName = model.powerName;
             towerModel.isSubTower = model.isSubTower;
 
-            //MelonLogger.Msg("\n\n" + model.name + "\n");
-            //foreach (var i in towerModel.behaviors)
-            //{
-            //    MelonLogger.Msg(i.name);
-            //}
+            List<Model> list = new List<Model>();
+
+            foreach (var behavior in model.behaviors)
+            {
+                bool flag = behavior.name != "TowerExpireModel_";
+                if (flag)
+                {
+                    list.Add(behavior);
+                }
+            }
+            towerModel.behaviors = list.ToArray();
         }
     }
 }
