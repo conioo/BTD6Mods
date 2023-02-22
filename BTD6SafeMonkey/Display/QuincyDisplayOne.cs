@@ -1,13 +1,5 @@
-﻿using Assets.Scripts.Unity.Display;
-using BTD_Mod_Helper.Api.Display;
-using BTD_Mod_Helper.Extensions;
-using BTD_Mod_Helper.Api.Towers;
-using Assets.Scripts.Unity;
-using Assets.Scripts.Models.Towers;
-using MelonLoader;
-using Assets.Scripts.Unity.UI_New.InGame;
-using BTD_Mod_Helper.Api;
-using Assets.Scripts.Unity.Bridge;
+﻿using BTD_Mod_Helper.Api.Display;
+using Il2CppAssets.Scripts.Unity.Display;
 
 namespace BTD6SafeMonkey.Display
 {

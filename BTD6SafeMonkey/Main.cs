@@ -1,8 +1,4 @@
-﻿using Assets.Scripts.Unity;
-using Assets.Scripts.Unity.UI_New.InGame;
-using BTD_Mod_Helper;
-using BTD_Mod_Helper.Extensions;
-using Assets.Scripts.Utils;
+﻿using BTD_Mod_Helper;
 using MelonLoader;
 
 namespace BTD6SafeMonkey

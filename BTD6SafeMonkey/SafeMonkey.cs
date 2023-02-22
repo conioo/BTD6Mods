@@ -1,19 +1,14 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Models.Towers.Behaviors;
-using Assets.Scripts.Models.Towers.Behaviors.Emissions;
-using Assets.Scripts.Models.Towers.Filters;
-using Assets.Scripts.Models.Towers.Projectiles.Behaviors;
-using Assets.Scripts.Unity;
-using BTD_Mod_Helper.Api.Towers;
+﻿using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using BTD6SafeMonkey.Display;
-using MelonLoader;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Models.TowerSets;
 
 namespace BTD6SafeMonkey
 {
     class SafeMonkey : ModTower
     {
-        public override string TowerSet => PRIMARY;
+        public override TowerSet TowerSet => TowerSet.Primary;
         public override string BaseTower => TowerType.DartMonkey;
         public override string Description => "Safemonkey is strong monkey";
         public override int Cost => 650;

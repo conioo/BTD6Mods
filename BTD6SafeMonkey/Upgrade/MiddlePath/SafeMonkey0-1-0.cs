@@ -1,8 +1,8 @@
-﻿using Assets.Scripts.Models.Towers;
-using BTD_Mod_Helper.Api.Towers;
+﻿using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using BTD6SafeMonkey;
 using BTD6SafeMonkey.Display;
+using Il2CppAssets.Scripts.Models.Towers;
 
 namespace BTD6_SafeMonkey.Upgrade.MiddlePath
 {

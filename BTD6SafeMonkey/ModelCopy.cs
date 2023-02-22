@@ -1,4 +1,4 @@
-﻿using Assets.Scripts.Models.Towers.Behaviors.Attack;
+﻿using Il2CppAssets.Scripts.Models.Towers.Behaviors.Attack;
 
 namespace BTD6_SafeMonkey
 {
