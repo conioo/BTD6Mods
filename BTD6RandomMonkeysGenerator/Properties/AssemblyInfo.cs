@@ -1,6 +1,6 @@
 ﻿using MelonLoader;
+using RandomMonkeys;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Szablon_BTD6")]
@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: MelonInfo(typeof(BTD6RandomMonkeysGenerator.Main), "BTD6RandomMonkeysGenerator", "1.0.0", "Adek")]
+[assembly: MelonInfo(typeof(BTD6RandomMonkeysGenerator.Main), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 [assembly: ComVisible(false)]

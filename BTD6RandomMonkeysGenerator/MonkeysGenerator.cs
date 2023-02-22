@@ -1,21 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Models.Towers.Behaviors;
-using Assets.Scripts.Models.Towers.Behaviors.Attack;
-using Assets.Scripts.Models.Towers.Projectiles;
-using Assets.Scripts.Models.Towers.Projectiles.Behaviors;
-using Assets.Scripts.Simulation.Towers.Behaviors.Attack.Behaviors;
-using Assets.Scripts.Unity;
-using Assets.Scripts.Utils;
-using BTD_Mod_Helper;
-using BTD_Mod_Helper.Api.Towers;
+﻿using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using BTD6RandomMonkeysGenerator.Set;
-using MelonLoader;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
+using Il2CppAssets.Scripts.Unity;
 
 namespace BTD6RandomMonkeysGenerator
 {
@@ -40,7 +28,7 @@ namespace BTD6RandomMonkeysGenerator
             var addMonkey = Game.instance.model.GetTowerModel(TowerType.DartMonkey).Duplicate();
 
             addMonkey.cost = 0;
-            addMonkey.display = Main.CodeTier0;
+            addMonkey.name = Main.CodeTier0;
 
             createModel.tower = addMonkey;
 

@@ -1,9 +1,7 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Unity;
-using System.Collections.Generic;
+﻿using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Unity;
 using System;
-using MelonLoader;
-using BTD_Mod_Helper.Api;
+using System.Collections.Generic;
 
 namespace BTD6RandomMonkeysGenerator.MonkeysRandomGenerator
 {
