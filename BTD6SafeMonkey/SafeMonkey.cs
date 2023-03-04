@@ -3,6 +3,7 @@ using BTD_Mod_Helper.Extensions;
 using BTD6SafeMonkey.Display;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.TowerSets;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 
 namespace BTD6SafeMonkey
 {

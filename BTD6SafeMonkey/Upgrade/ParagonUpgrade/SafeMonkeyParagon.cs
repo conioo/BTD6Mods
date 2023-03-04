@@ -5,6 +5,7 @@ using Il2Cpp;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
+using Il2CppAssets.Scripts.Models.Towers.Filters;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Unity;
 
@@ -15,6 +16,8 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
         public override int Cost => 15500000;
 
         public override string Description => "Paragon SafeMonkey";
+
+        public override int Priority => -1;
 
         public override void ApplyUpgrade(TowerModel towerModel)
         {
@@ -56,14 +59,16 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
             grenadeProjectileModel.AddBehavior(new DamageModifierForTagModel("AdditionalFortifiedDamage", "Fortified", 2, 200000, false, false));
 
             attackModel.AddWeapon(grenadeAttack);
-            
+
             towerModel.range += 90;
             towerModel.radiusSquared += 90;
 
             var reflection = Game.instance.model.GetTower(TowerType.SniperMonkey, 0, 3, 0).GetAttackModel().weapons[0].projectile.GetBehavior<RetargetOnContactModel>().Duplicate();
             reflection.distance = 800;
             grenadeProjectileModel.AddBehavior(reflection);
-            towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+            //towerModel.AddBehavior(new OverrideCamoDetectionModel("OverrideCamoDetectionModel_", true));
+
+            towerModel.GetDescendants<FilterInvisibleModel>().ForEach(model => model.isActive = false);
         }
     }
 }

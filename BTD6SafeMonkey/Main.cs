@@ -1,4 +1,6 @@
 ﻿using BTD_Mod_Helper;
+using Il2CppAssets.Scripts.Simulation.Bloons;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using MelonLoader;
 
 namespace BTD6SafeMonkey
