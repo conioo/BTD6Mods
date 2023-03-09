@@ -60,6 +60,7 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
 
             attackModel.AddWeapon(grenadeAttack);
 
+            towerModel.GetAttackModel().range += 90;
             towerModel.range += 90;
             towerModel.radiusSquared += 90;
 
