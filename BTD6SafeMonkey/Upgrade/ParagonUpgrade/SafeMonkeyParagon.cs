@@ -3,7 +3,6 @@ using BTD_Mod_Helper.Extensions;
 using BTD6SafeMonkey.Display;
 using Il2Cpp;
 using Il2CppAssets.Scripts.Models.Towers;
-using Il2CppAssets.Scripts.Models.Towers.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Emissions;
 using Il2CppAssets.Scripts.Models.Towers.Filters;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
@@ -13,7 +12,7 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
 {
     class SafeMonkeyParagon : ModParagonUpgrade<SafeMonkey>
     {
-        public override int Cost => 15500000;
+        public override int Cost => 10500000;
 
         public override string Description => "Paragon SafeMonkey";
 
@@ -28,10 +27,10 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
 
             baseProjectileModel.ApplyDisplay<BulletDisplay>();
 
-            baseWeaponModel.emission = new ArcEmissionModel("EmissionModelThreeShuriken", 8, 0, 20, null, false);
+            baseWeaponModel.emission = new ArcEmissionModel("EmissionModelThreeShuriken", 12, 0, 20, null, false);
 
-            baseProjectileModel.pierce += 500000;
-            baseDamageModel.damage += 500000;
+            baseProjectileModel.pierce += 900000;
+            baseDamageModel.damage += 900000;
             baseDamageModel.immuneBloonProperties = BloonProperties.None;
 
 
@@ -47,8 +46,8 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
             grenadeDamageModel.maxDamage = float.MaxValue;
             grenadeProjectileModel.maxPierce = float.MaxValue;
 
-            grenadeDamageModel.damage += 200000;
-            grenadeProjectileModel.pierce += 200000;
+            grenadeDamageModel.damage += 400000;
+            grenadeProjectileModel.pierce += 500000;
 
             grenadeProjectileModel.AddBehavior(new DamageModifierForTagModel("AdditionalDdtDamage", "Ddt", 2, 200000, false, false));
             grenadeProjectileModel.AddBehavior(new DamageModifierForTagModel("AdditionalBfbDamage", "Bfb", 2, 200000, false, false));
@@ -60,9 +59,9 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
 
             attackModel.AddWeapon(grenadeAttack);
 
-            towerModel.GetAttackModel().range += 90;
-            towerModel.range += 90;
-            towerModel.radiusSquared += 90;
+            towerModel.GetAttackModel().range += 95;
+            towerModel.range += 95;
+            towerModel.radiusSquared += 95;
 
             var reflection = Game.instance.model.GetTower(TowerType.SniperMonkey, 0, 3, 0).GetAttackModel().weapons[0].projectile.GetBehavior<RetargetOnContactModel>().Duplicate();
             reflection.distance = 800;
