@@ -27,7 +27,7 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
 
             baseProjectileModel.ApplyDisplay<BulletDisplay>();
 
-            baseWeaponModel.emission = new ArcEmissionModel("EmissionModelThreeShuriken", 12, 0, 20, null, false);
+            baseWeaponModel.emission = new ArcEmissionModel("EmissionModelThreeShuriken", 12, 0, 20, null, false, false);
 
             baseProjectileModel.pierce += 900000;
             baseDamageModel.damage += 900000;

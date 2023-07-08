@@ -29,7 +29,7 @@ namespace BTD6_SafeMonkey.Upgrade.MiddlePath
             projectileModel.pierce += 40;
             weaponModel.Rate *= 0.65f;
 
-            weaponModel.emission = new ArcEmissionModel("EmissionModelThreeShuriken", 8, 0, 40, null, false);
+            weaponModel.emission = new ArcEmissionModel("EmissionModelThreeShuriken", 8, 0, 40, null, false, false);
 
             var bombAttack = Game.instance.model.GetTower(TowerType.BombShooter, 2, 5, 0).GetWeapon().Duplicate();
             bombAttack.projectile.ApplyDisplay<GrenadeDisplay>();

@@ -2,9 +2,9 @@
 {
     public static class ModHelperData
     {
-        public const string Version = "1.0.3";
+        public const string Version = "1.0.4";
         public const string Name = "Geraldo Helpers In Shop";
-        public const string WorksOnVersion = "35";
+        public const string WorksOnVersion = "37";
 
         public const string Description = "Adds Geraldo helpers to shop";
 

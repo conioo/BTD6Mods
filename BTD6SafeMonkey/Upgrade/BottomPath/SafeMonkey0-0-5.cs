@@ -54,7 +54,7 @@ namespace BTD6_SafeMonkey.Upgrade.MiddlePath
             var ability = Game.instance.model.GetTower(TowerType.MonkeyVillage, 0, 5, 0).GetAbility().Duplicate();
             ability.cooldown *= 1.2f;
 
-            weaponModelShuriken.emission = new ArcEmissionModel("EmissionModelLargeAmountShuriken", 14, 0, 40, null, false);
+            weaponModelShuriken.emission = new ArcEmissionModel("EmissionModelLargeAmountShuriken", 14, 0, 40, null, false , false);
 
             towerModel.AddBehavior(ability);
             towerModel.ApplyDisplay<QuincyDisplayThree>();

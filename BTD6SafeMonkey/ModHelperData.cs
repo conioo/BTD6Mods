@@ -2,8 +2,8 @@
 {
     public static class ModHelperData
     {
-        public const string Version = "1.3.8";
-        public const string WorksOnVersion = "36";
+        public const string Version = "1.3.9";
+        public const string WorksOnVersion = "37";
         public const string Name = "SafeMonkey";
 
         public const string Description = "Adds new monkey SafeMonkey";

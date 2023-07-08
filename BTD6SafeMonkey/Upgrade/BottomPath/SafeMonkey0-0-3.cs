@@ -30,7 +30,7 @@ namespace BTD6_SafeMonkey.Upgrade.MiddlePath
             projectileModel.pierce += 8;
             damageModel.damage += 2;
 
-            weaponModel.emission = new ArcEmissionModel("EmissionModelThreeShuriken", 3, 0, 30, null, false);
+            weaponModel.emission = new ArcEmissionModel("EmissionModelThreeShuriken", 3, 0, 30, null, false, false);
 
             towerModel.ApplyDisplay<QuincyDisplayTwo>();
         }

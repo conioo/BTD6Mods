@@ -15,8 +15,6 @@ namespace RandomMonkeys.BloonsMod
         const int MINVALUE = 470;
         bool FirstLoaded = true;
 
-        public override string MelonInfoCsURL => "https://raw.githubusercontent.com/conioo/BTD6Mods/main/BTD6RandomMonkeys/Properties/AssemblyInfo.cs";
-        public override string LatestURL => "https://github.com/conioo/BTD6Mods/blob/main/BTD6RandomMonkeys/BTD6RandomMonkeys.dll?raw=true";
 
         public static readonly ModSettingBool EnableMod = true;
         public static readonly ModSettingBool EnableSeed = false;
