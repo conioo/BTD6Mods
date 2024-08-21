@@ -2,13 +2,13 @@
 {
     public static class ModHelperData
     {
-        public const string Version = "1.4.7";
-        public const string WorksOnVersion = "41";
+        public const string Version = "2.0.0";
+        public const string WorksOnVersion = "44";
 
 
         public const string Name = "RandomMonkeys";
 
-        public const string Description = "Adds 8 new random monkeys";
+        public const string Description = "Adds some new random monkeys";
 
         public const string RepoOwner = "conioo";
         public const string RepoName = "BTD6Mods";

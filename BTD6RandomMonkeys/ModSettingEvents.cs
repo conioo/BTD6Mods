@@ -2,110 +2,108 @@
 using MelonLoader;
 using RandomMonkeys.MonkeysRandomGenerator;
 using BTD_Mod_Helper.Api;
+using Il2CppAssets.Scripts.Unity;
+using BTD_Mod_Helper.Extensions;
+using RandomMonkeys.DefaultOptions;
 
 namespace RandomMonkeys.Events
 {
     static public class ModSettingEvents
     {
-        static public Action<long> ValueChangedTier_0 = (long newValue) =>
+        static public Action<double> PriceMultiplierSaved = (double newValue) =>
         {
-            ModContent.GetTowerModel<Towers.Tier_0>(0, 0, 0).cost = newValue;
-            MelonLogger.Msg($"(Tier_0) Set the new price to { newValue}");
-            GeneratorMonkeys.SetRandomTierCost();
-            GeneratorMonkeys.SetRandomTierLiteCost();
-        };
+            MelonLogger.Msg($"Set the new PriceMultiplier to {newValue}");
 
-        static public Action<long> ValueChangedTier_1 = (long newValue) =>
-        {
-            ModContent.GetTowerModel<Towers.Tier_1>(0, 0, 0).cost = newValue;
-            MelonLogger.Msg($"(Tier_1) Set the new price to { newValue}");
-            GeneratorMonkeys.SetRandomTierCost();
-            GeneratorMonkeys.SetRandomTierLiteCost();
-        };
-
-        static public Action<long> ValueChangedTier_2 = (long newValue) =>
-        {
-            ModContent.GetTowerModel<Towers.Tier_2>(0, 0, 0).cost = newValue;
-            MelonLogger.Msg($"(Tier_2) Set the new price to { newValue}");
-            GeneratorMonkeys.SetRandomTierCost();
-            GeneratorMonkeys.SetRandomTierLiteCost();
-        };
-
-        static public Action<long> ValueChangedTier_3 = (long newValue) =>
-        {
-            ModContent.GetTowerModel<Towers.Tier_3>(0, 0, 0).cost = newValue;
-            MelonLogger.Msg($"(Tier_3) Set the new price to { newValue}");
-            GeneratorMonkeys.SetRandomTierCost();
-            GeneratorMonkeys.SetRandomTierLiteCost();
-        };
-
-        static public Action<long> ValueChangedTier_4 = (long newValue) =>
-        {
-            ModContent.GetTowerModel<Towers.Tier_4>(0, 0, 0).cost = newValue;
-            MelonLogger.Msg($"(Tier_4) Set the new price to { newValue}");
-            GeneratorMonkeys.SetRandomTierCost();
-            GeneratorMonkeys.SetRandomTierLiteCost();
-        };
-
-        static public Action<long> ValueChangedTier_5 = (long newValue) =>
-        {
-            ModContent.GetTowerModel<Towers.Tier_5>(0, 0, 0).cost = newValue;
-            MelonLogger.Msg($"(Tier_5) Set the new price to { newValue}");
-            GeneratorMonkeys.SetRandomTierCost();
-            GeneratorMonkeys.SetRandomTierLiteCost();
-        };
-
-        static public Action<long> ProbabilityChangedTier = (long newProbability) =>
-        {
-            if (GeneratorMonkeys.isCorrectSumProbability())
+            foreach (var towerDetails in Game.instance.model.GetAllTowerDetails())
             {
-                GeneratorMonkeys.SetConverter();
-                GeneratorMonkeys.SetRandomTierCost();
+                if (towerDetails.name.Contains("BTD6RandomMonkeys"))
+                {
+                    if (towerDetails.name.Contains("Tier_0"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(0);
+                    }
+                    else if (towerDetails.name.Contains("Tier_1"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(1);
+                    }
+                    else if (towerDetails.name.Contains("Tier_2"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(2);
+                    }
+                    else if (towerDetails.name.Contains("Tier_3"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(3);
+                    }
+                    else if (towerDetails.name.Contains("Tier_4"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(4);
+                    }
+                    else if (towerDetails.name.Contains("Tier_5"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(5);
+                    }
+                    else if (towerDetails.name.Contains("Tier_AnyLite"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(Options.randomLiteIndex);
+                    }
+                    else if (towerDetails.name.Contains("Tier_Any"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(Options.randomIndex);
+                    }
+                    else if (towerDetails.name.Contains("RandomHero"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(Options.heroIndex);
+                    }
+                    else if (towerDetails.name.Contains("RandomParagon"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(Options.paragonIndex);
+                    }
+                    else if (towerDetails.name.Contains("RandomSubTower"))
+                    {
+                        towerDetails.GetTower().cost = GeneratorMonkeys.GetRandomMonkeyCost(Options.subTowerIndex);
+                    }
+
+                    towerDetails.GetTower().cost *= (float)newValue;
+                }
             }
         };
 
-        static public Action<long> ProbabilityChangedTierLite = (long newProbability) =>
+        static public Action<bool> RandomSeedSaved = (bool newValue) =>
         {
-            if (GeneratorMonkeys.isCorrectSumProbabilityLite())
-            {
-                GeneratorMonkeys.SetConverterLite();
-                GeneratorMonkeys.SetRandomTierLiteCost();
-            }
-        };
-
-        static public Action<bool> ChangedBooleanSeed = (bool isEnableSeed) =>
-        {
-            if (isEnableSeed)
-            {
-                GeneratorMonkeys.SetGeneratorSeed();
-                MelonLogger.Msg($"Set seed to: { BloonsMod.Main.Seed.GetValue() }");
-            }
-            else
+            if (newValue)
             {
                 GeneratorMonkeys.SetGeneratorRandom();
                 MelonLogger.Msg($"Set random seed");
             }
-        };
-
-        static public Action<long> ChangedSeed = (long newSeed) =>
-        {
-            if (BloonsMod.Main.EnableSeed)
+            else
             {
                 GeneratorMonkeys.SetGeneratorSeed();
-                MelonLogger.Msg($"Set seed to: { (long)BloonsMod.Main.Seed.GetValue() }");
+                MelonLogger.Msg($"Set seed to: {BloonsMod.Main.Seed.GetValue()}");
             }
         };
 
-        static public Action<bool> ChangedStateMod = (bool isEnableMod) =>
+        static public Action<long> SeedSaved = (long newValue) =>
         {
-            if (isEnableMod)
+            if (BloonsMod.Main.RandomSeed)
             {
-                MelonLogger.Msg($"Enable Mod Random Monkeys");
+                GeneratorMonkeys.SetGeneratorRandom();
+                MelonLogger.Msg($"Set random seed");
             }
             else
             {
-                MelonLogger.Msg($"Disable Mod Random Monkeys");
+                GeneratorMonkeys.SetGeneratorSeed();
+                MelonLogger.Msg($"Set seed to: {BloonsMod.Main.Seed.GetValue()}");
             }
+            //MelonLogger.Msg($"Set the new Seed to {newValue}");
         };
+
+        //static public Action<long> ProbabilityChangedTier = (long newProbability) =>
+        //{
+        //    if (GeneratorMonkeys.isCorrectSumProbability())
+        //    {
+        //        GeneratorMonkeys.SetConverter();
+        //        GeneratorMonkeys.SetRandomTierCost();
+        //    }
+        //};
     }
 }

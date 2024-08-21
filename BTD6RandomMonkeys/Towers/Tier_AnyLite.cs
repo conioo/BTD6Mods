@@ -1,4 +1,5 @@
-﻿using RandomMonkeys.DefaultOptions;
+﻿using BTD_Mod_Helper.Api.ModOptions;
+using RandomMonkeys.DefaultOptions;
 
 namespace RandomMonkeys.Towers
 {
@@ -6,14 +7,16 @@ namespace RandomMonkeys.Towers
     {
         public override string Description => "Random Tier Lite (without Tier 5)";
 
-        public override int Cost => Options.DefaultCostTierAnyLite;
-
         public override bool DontAddToShop => false;
 
         public override string DisplayName => "Random Tier Lite";
 
         protected override string IconName => "TierAny";
 
-        protected override int Index => 7;
+        protected override int Index => Options.randomLiteIndex;
+
+        protected override int Order => 2;
+
+        public override ModSettingHotkey Hotkey => BloonsMod.Main.RandomAnyLite;
     }
 }

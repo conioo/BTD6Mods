@@ -1,4 +1,5 @@
-﻿using RandomMonkeys.DefaultOptions;
+﻿using BTD_Mod_Helper.Api.ModOptions;
+using RandomMonkeys.DefaultOptions;
 
 namespace RandomMonkeys.Towers
 {
@@ -6,14 +7,14 @@ namespace RandomMonkeys.Towers
     {
         public override string Description => "Random Tower Tier 4";
 
-        public override int Cost => Options.DefaultCostTier_0;
-
         public override bool DontAddToShop => false;
 
         public override string DisplayName => "Tier 4";
 
         protected override string IconName => "Tier4";
 
-        protected override int Index => 2;
+        protected override int Index => 4;
+        public override ModSettingHotkey Hotkey => BloonsMod.Main.RandomTier4;
+
     }
 }
