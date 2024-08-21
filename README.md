@@ -1,8 +1,8 @@
 <h1 align="center">Bloons Tower Defense 6 Mods</h1>
 
-<div style="text-align: center;">
+<div  align="center">
     <a href="https://www.buymeacoffee.com/conioo" target="_blank">
-        <img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" height="41" width="194">
+        <img src="https://cdn.buymeacoffee.com/buttons/default-green.png" alt="Buy Me A Coffee" height="61" width="260">
     </a>
 </div>
 
