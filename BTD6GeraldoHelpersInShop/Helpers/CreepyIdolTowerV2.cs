@@ -6,6 +6,8 @@ using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Utils;
 using System.Collections.Generic;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
+
 
 namespace GeraldoHelpersInShop
 {

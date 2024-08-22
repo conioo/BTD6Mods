@@ -5,16 +5,17 @@ using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Utils;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 using System.Collections.Generic;
 
 namespace GeraldoHelpersInShop
 {
     class CreepyIdolTower : ModTower
     {
-        public override SpriteReference PortraitReference => Game.instance.model.towers[22].portrait;
-        //public override SpriteReference PortraitReference => Game.instance.model.GetTowerWithName("CreepyIdolTower").portrait;
-        //public override SpriteReference IconReference => Game.instance.model.GetTowerWithName("CreepyIdolTower").portrait;
-        public override SpriteReference IconReference => Game.instance.model.towers[22].portrait;
+        //public override SpriteReference PortraitReference => Game.instance.model.towers[22].portrait;
+        public override SpriteReference PortraitReference => Game.instance.model.GetTowerWithName("CreepyIdolTower").portrait;
+        public override SpriteReference IconReference => Game.instance.model.GetTowerWithName("CreepyIdolTower").portrait;
+        //public override SpriteReference IconReference => Game.instance.model.towers[22].portrait;
         public override TowerSet TowerSet => TowerSet.Support;
         public override string BaseTower => TowerType.EngineerMonkey;
         public override int Cost => 200;
