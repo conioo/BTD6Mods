@@ -21,20 +21,20 @@ namespace BTD6SafeMonkey
         }
     }
 
-    public class PanzerDisplay : ModCustomDisplay
-    {
-        public override string AssetBundleName => "panzer"; // loads from "assets.bundle"
-        public override string PrefabName => "Panzer_VI_E"; // loads the "MyModel" prefab
-        public override string MaterialName => "Panzer_VI_E";
-        public override float Scale => 20;
-        public override void ModifyDisplayNode(UnityDisplayNode node)
-        {
-            // modify the node however you want
-            node.Scale = new UnityEngine.Vector3 (20f, 20f, 20f);
+    //public class PanzerDisplay : ModCustomDisplay
+    //{
+    //    public override string AssetBundleName => "panzer";
+    //    public override string PrefabName => "Panzer_VI_E";
+    //    public override string MaterialName => "Panzer_VI_E";
+    //    public override float Scale => 20;
+    //    public override void ModifyDisplayNode(UnityDisplayNode node)
+    //    {
+    //        // modify the node however you want
+    //        node.Scale = new UnityEngine.Vector3 (20f, 20f, 20f);
 
-            node.rotation = 130;
-        }
-    }
+    //        node.rotation = 130;
+    //    }
+    //}
     class SafeMonkey : ModTower
     {
         public override TowerSet TowerSet => TowerSet.Primary;
@@ -57,8 +57,8 @@ namespace BTD6SafeMonkey
             damageModel.damage = 1;
             projectileModel.pierce = 2;
 
-            //projectileModel.ApplyDisplay<ShurikenDisplay>();
-            projectileModel.ApplyDisplay<PanzerDisplay>();
+            projectileModel.ApplyDisplay<ShurikenDisplay>();
+            //projectileModel.ApplyDisplay<PanzerDisplay>();
         }
         public override ParagonMode ParagonMode => ParagonMode.Base000;
         public override string Icon => "SafeIcon";
