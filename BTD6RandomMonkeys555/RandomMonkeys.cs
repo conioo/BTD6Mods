@@ -91,7 +91,9 @@ namespace BTD6_Random_Monkeys_5_5_5.MonkeysRandomGenerator
             TowerType.MonkeyVillage,
             TowerType.EngineerMonkey,
             TowerType.BananaFarm,
-            TowerType.SpikeFactory
+            TowerType.SpikeFactory,
+            TowerType.Mermonkey,
+            TowerType.BeastHandler
         };
 
         static private readonly int numberMonkeys = AllMonkeys.Count;
