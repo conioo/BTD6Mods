@@ -4,6 +4,8 @@ using BTD6RandomMonkeysGenerator.Set;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Unity;
+using MelonLoader;
+using System.Linq;
 
 namespace BTD6RandomMonkeysGenerator
 {
@@ -20,8 +22,13 @@ namespace BTD6RandomMonkeysGenerator
 
         public override void ModifyBaseTowerModel(TowerModel towerModel)
         {
-            var spawnerAttack = towerModel.GetAttackModel(0);
-            var mainAttack = towerModel.GetAttackModel(1);
+            var spawnerAttack = towerModel.GetAttackModels().First(model => model.name.Contains("AttackModel_Spawner"));
+            var mainAttack = towerModel.GetAttackModels().First(model => model.name.Contains("AttackModel_Attack"));
+
+            //foreach (var a in spawnerAttack.weapons[0].projectile.behaviors)
+            //{
+            //    MelonLogger.Msg(a.name);
+            //}
 
             var createModel = spawnerAttack.weapons[0].projectile.GetBehavior<CreateTowerModel>();
 
@@ -34,6 +41,7 @@ namespace BTD6RandomMonkeysGenerator
 
             towerModel.range += 20;
             spawnerAttack.range += 20;
+
             towerModel.RemoveBehavior(mainAttack);
         }
 
