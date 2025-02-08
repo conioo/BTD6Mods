@@ -67,10 +67,12 @@ namespace RandomMonkeys.MonkeysRandomGenerator
         }
         static internal TowerModel GetRandomSubTower()
         {
-            var col = Game.instance.model.towers.Where(t => t.isSubTower && t.IsPlaceableInAreaType(Il2CppAssets.Scripts.Models.Map.AreaType.land)).ToList();
-            MelonLogger.Msg(col.Count);
-            //return InGameExt.GetGameModel(InGame.instance).GetTower(GetMonkey(UnlockedSubTowers));
-            return col[RandomGenerator.Next(col.Count)];
+            //var col = Game.instance.model.towers.Where(t => t.isSubTower && t.IsPlaceableInAreaType(Il2CppAssets.Scripts.Models.Map.AreaType.land)).ToList();
+            //MelonLogger.Msg(col.Count);
+
+
+            return InGameExt.GetGameModel(InGame.instance).GetTower(GetMonkey(UnlockedSubTowers));
+            //return col[RandomGenerator.Next(col.Count)];
         }
         static internal TowerModel GetRandomParagon()
         {
@@ -156,7 +158,7 @@ namespace RandomMonkeys.MonkeysRandomGenerator
 
             //MelonLogger.Msg("--------------");
 
-            if(BloonsMod.Main.HideUpgrades)
+            if (BloonsMod.Main.HideUpgrades)
             {
                 tower.dontDisplayUpgrades = true;
             }
@@ -311,9 +313,10 @@ namespace RandomMonkeys.MonkeysRandomGenerator
                     }
                 }
 
-                if (tower.isSubTower)
+                if (tower.isSubTower && tower.isBakable)
                 {
-                    //MelonLogger.Msg($"geraldo: {tower.name}");
+                    //MelonLogger.Msg($"sub: {tower.name}");
+
                     GeneratorMonkeys.AllSubTowers.Add(tower.name);
                     monkeyCosts[Options.subTowerIndex] += tower.cost;
                 }

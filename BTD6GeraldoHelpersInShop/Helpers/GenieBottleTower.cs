@@ -27,13 +27,14 @@ namespace GeraldoHelpersInShop
         {
             var model = Game.instance.model.GetTowerWithName("GenieBottleTower");
 
+
             towerModel.display = model.display;
-            towerModel.mods = model.mods.Duplicate();
-            towerModel.footprint = model.footprint.Duplicate();
-            towerModel.targetTypes = model.targetTypes.Duplicate();
-            towerModel.TargetTypes = model.TargetTypes.Duplicate();
+            towerModel.mods = model.mods?.Duplicate();
+            towerModel.footprint = model.footprint?.Duplicate();
+            towerModel.targetTypes = model.targetTypes?.Duplicate();
+            towerModel.TargetTypes = model.TargetTypes?.Duplicate();
             towerModel.radius = model.radius;
-            towerModel.radiusSquared = model.radiusSquared;
+            //towerModel.radiusSquared = model.radiusSquared;
             towerModel.range = model.range;
             towerModel.ignoreBlockers = model.ignoreBlockers;
             towerModel.isGlobalRange = model.isGlobalRange;
@@ -47,7 +48,7 @@ namespace GeraldoHelpersInShop
             towerModel.checkedImplementationType = model.checkedImplementationType;
             towerModel.doesntRotate = model.doesntRotate;
             towerModel.emoteSpriteLarge = model.emoteSpriteLarge;
-            towerModel.emoteSpriteLarge = model.emoteSpriteSmall;
+            towerModel.emoteSpriteSmall = model.emoteSpriteSmall;
             towerModel.towerSize = model.towerSize;
             towerModel.showPowerTowerBuffs = model.showPowerTowerBuffs;
             towerModel.powerName = model.powerName;
@@ -55,7 +56,7 @@ namespace GeraldoHelpersInShop
 
             List<Model> list = new List<Model>();
 
-            var targetProvider = Game.instance.model.GetTowerWithName("GenieBottleTowerV2").behaviors.First((behavior) => behavior.name == "AttackAirUnitModel_SpectreAttackClose_").Cast<AttackAirUnitModel>().targetProvider.Duplicate();
+            var targetProvider = Game.instance.model.GetTowerWithName("GenieBottleTowerV2").behaviors.First((behavior) => behavior.name == "AttackAirUnitModel_SpectreAttackClose_").Cast<AttackAirUnitModel>().targetProvider?.Duplicate();
 
             foreach (var behavior in model.behaviors)
             {
@@ -69,7 +70,8 @@ namespace GeraldoHelpersInShop
 
             var attackModel = towerModel.behaviors.First((behavior) => behavior.name == "AttackAirUnitModel_SpectreAttack_").Cast<AttackAirUnitModel>();
 
-            attackModel.targetProvider = targetProvider;          
+            attackModel.targetProvider = targetProvider;
+
         }
     }
 }

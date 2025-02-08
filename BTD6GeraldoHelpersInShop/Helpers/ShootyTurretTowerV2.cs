@@ -30,7 +30,7 @@ namespace GeraldoHelpersInShop
             towerModel.targetTypes = model.targetTypes.Duplicate();
             towerModel.TargetTypes = model.TargetTypes.Duplicate();
             towerModel.radius = model.radius;
-            towerModel.radiusSquared = model.radiusSquared;
+            //towerModel.radiusSquared = model.radiusSquared;
             towerModel.range = model.range;
             towerModel.ignoreBlockers = model.ignoreBlockers;
             towerModel.isGlobalRange = model.isGlobalRange;

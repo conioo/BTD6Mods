@@ -8,11 +8,14 @@ using Il2CppAssets.Scripts.Models;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.TowerSets;
 using Il2CppAssets.Scripts.Simulation.Input;
+using Il2CppAssets.Scripts.Simulation.Objects;
+using Il2CppAssets.Scripts.Simulation.Towers;
 using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
 using Il2CppAssets.Scripts.Unity;
 using Il2CppAssets.Scripts.Unity.Achievements.List;
 using Il2CppAssets.Scripts.Unity.Display.Animation;
 using Il2CppAssets.Scripts.Unity.Powers;
+using Il2CppAssets.Scripts.Unity.Towers;
 using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 using MelonLoader;
 using RandomMonkeys.DefaultOptions;
@@ -20,6 +23,8 @@ using RandomMonkeys.Events;
 using RandomMonkeys.MonkeysRandomGenerator;
 using RandomMonkeys.Towers;
 using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
 using UnityEngine;
 
 namespace RandomMonkeys.BloonsMod
@@ -152,6 +157,16 @@ namespace RandomMonkeys.BloonsMod
             //RandomTierLiteProbability_Tier_4.OnValueChanged.Add(ModSettingEvents.ProbabilityChangedTierLite);
         }
 
+        //public override void OnTowerCreated(Tower tower, Entity target, Model modelToUse)
+        //{
+        //    tower.isNotUpgradeable = true;
+
+        //    base.OnTowerCreated(tower, target, modelToUse);
+        //}
+        //public override void OnTowerUpgraded(Tower tower, string upgradeName, TowerModel newBaseTowerModel)
+        //{
+        //    MelonLogger.Msg(upgradeName);
+        //}
         public override void OnNewGameModel(GameModel result)
         {
             //MelonLogger.Msg($"OnNewGameModel");
@@ -252,6 +267,65 @@ namespace RandomMonkeys.BloonsMod
     [HarmonyPatch(typeof(Il2CppAssets.Scripts.Simulation.Towers.Tower), "Initialise")]
     public class TowerInitialise_Patch
     {
+        static int idx = 0;
+
+        static List<string> towerNames = new List<string>
+        {
+            //"BuccaneerPlane",
+            //"BuccaneerParagonPlane",
+            "Marine",
+            //"ComancheDefenceHeli",
+            //"Phoenix",
+            //"PermaPhoenix",
+            //"LordPhoenix",
+            //"DarkPhoenixV1",
+            //"DarkPhoenixV2",
+            //"DarkPhoenixV3",
+            //"DarkPhoenixV4",
+            //"DarkPhoenixV5",
+            "SunAvatarMini",
+            "TrueSunAvatarMini",
+            "SpectreA",
+            "SpectreC",
+            "SpectreVA",
+            "SpectreVC",
+            "TranceTotem",
+            "Sentry",
+            "SentryCrushing",
+            "SentryBoom",
+            "SentryCold",
+            "SentryEnergy",
+            "SentryParagon",
+            "SentryParagonGreen",
+            "SentryParagonRed",
+            "SentryParagonBlue",
+            "SentryParagonChild",
+            "Piranha",
+            "Microraptor",
+            "Gyrfalcon",
+            "SacrificialTotem",
+            "NaturesWardTotem",
+            "BallOfLightTower",
+            "Drone",
+            "DroneSwarmDrone",
+            "UAV",
+            "UCAV",
+            "UCAVPerma",
+            "ShootyTurretTower",
+            "ShootyTurretTowerV2",
+            "CreepyIdolTower",
+            "CreepyIdolTowerV2",
+            "CreepyIdolTowerV3",
+            "RareQuincyActionFigureTower",
+            "HotSauceCreatureTower",
+            "HotSauceCreatureTowerV2",
+            "WererabbitTower",
+            "GenieBottleTower",
+            "GenieBottleTowerV2",
+            "ParagonPowerTotemTower",
+            "SpiritTower"
+        };
+
         [HarmonyPrefix]
         public static bool Prefix(Il2CppAssets.Scripts.Simulation.Towers.Tower __instance, ref Model modelToUse)
         {
@@ -300,7 +374,30 @@ namespace RandomMonkeys.BloonsMod
                 }
                 else if (modelToUse.name.Contains("RandomSubTower"))
                 {
+                    //List<Model> list = new List<Model>();
+
+                    //foreach (var behavior in model.behaviors)
+                    //{
+                    //    bool flag = behavior.name != "TowerExpireModel_";
+                    //    if (flag)
+                    //    {
+                    //        list.Add(behavior);
+                    //    }
+                    //}
+                    //towerModel.behaviors = list.ToArray();
+
+                    //modelToUse = towerModel;
+
                     modelToUse = GeneratorMonkeys.GetRandomSubTower();
+                    
+                    //MelonLogger.Msg(towerNames[idx]);
+                    //modelToUse = InGameExt.GetGameModel(InGame.instance).GetTower(towerNames[idx++]);
+
+                    ////string jsonString = JsonSerializer.Serialize(modelToUse);
+                    //string jsonString = JsonUtility.ToJson(modelToUse, prettyPrint: true);
+
+                    //string filePath = $@"C:\Users\posce\Desktop\opis\{towerNames[idx - 1]}.json";
+                    //File.WriteAllText(filePath, jsonString);
                 }
             }
             return true;

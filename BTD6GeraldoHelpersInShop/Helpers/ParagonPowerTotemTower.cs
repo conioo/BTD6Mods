@@ -28,7 +28,7 @@ namespace GeraldoHelpersInShop
             towerModel.behaviors = model.behaviors.Duplicate();
             towerModel.footprint = model.footprint.Duplicate();
             towerModel.radius = model.radius;
-            towerModel.radiusSquared = model.radiusSquared;
+            //towerModel.radiusSquared = model.radiusSquared;
             towerModel.range = model.range;
             towerModel.ignoreBlockers = model.ignoreBlockers;
             towerModel.isGlobalRange = model.isGlobalRange;

@@ -61,7 +61,7 @@ namespace BTD6SafeMonkey.Upgrade.ParagonUpgrade
 
             towerModel.GetAttackModel().range += 95;
             towerModel.range += 95;
-            towerModel.radiusSquared += 95;
+            towerModel.RadiusSquared += 95;
 
             var reflection = Game.instance.model.GetTower(TowerType.SniperMonkey, 0, 3, 0).GetAttackModel().weapons[0].projectile.GetBehavior<RetargetOnContactModel>().Duplicate();
             reflection.distance = 800;
