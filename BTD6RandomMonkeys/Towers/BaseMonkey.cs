@@ -17,7 +17,7 @@ namespace RandomMonkeys.Towers
 {
     abstract class BaseMonkey : ModTower<RandomMonkeysSet>
     {
-        public override string BaseTower => TowerType.SniperMonkey;
+        public override string BaseTower => TowerType.SacrificialTotem;
         public override int TopPathUpgrades => 0;
         public override int MiddlePathUpgrades => 0;
         public override int BottomPathUpgrades => 0;
@@ -48,7 +48,7 @@ namespace RandomMonkeys.Towers
 
             towerModel.areaTypes = newAreaType;
 
-            towerModel.ApplyDisplay<RandomDisplay>();
+            //towerModel.ApplyDisplay<RandomDisplay>();
         }
 
         public override int GetTowerIndex(List<TowerDetailsModel> towerSet)

@@ -27,7 +27,7 @@ namespace BTD6_Random_Monkeys_5_5_5.Towers
 
             //    towerModel.areaTypes = newAreaType;
 
-            towerModel.ApplyDisplay<RandomDisplay>();
+            //towerModel.ApplyDisplay<RandomDisplay>();
         }
 
         public override string Icon => "TierAny-Icon";

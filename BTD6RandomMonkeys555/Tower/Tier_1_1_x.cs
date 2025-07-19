@@ -27,7 +27,7 @@ namespace BTD6_Random_Monkeys_5_5_5.Towers
             //newAreaType[0] = AreaType.land;
             //newAreaType[1] = AreaType.water;
 
-            towerModel.ApplyDisplay<RandomDisplay>();
+            //towerModel.ApplyDisplay<RandomDisplay>();
         }
 
         public override string Icon => "Tier1-Icon";

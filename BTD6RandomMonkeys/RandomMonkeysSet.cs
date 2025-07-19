@@ -6,7 +6,7 @@ namespace RandomMonkeys.Set
     {
         public override string DisplayName => "Random";
         public override string Container => "ItemsContainer";
-        public override string Button => "ItemsContainer"; //zmiana
+        public override string Button => "ItemsContainer";
         public override string ContainerLarge => "ItemsContainer";
         public override string Portrait => "ItemsContainer";
     }
