@@ -58,11 +58,16 @@ namespace RandomMonkeys.MonkeysRandomGenerator
 
         static private string GetMonkey(List<string> monkeys)
         {
-            return monkeys[RandomGenerator.Next(monkeys.Count)];
+            var randomIndex = RandomGenerator.Next(monkeys.Count);
+
+            //MelonLogger.Msg(monkeys[randomIndex]);
+
+            return monkeys[randomIndex];
         }
 
         static internal TowerModel GetRandomHero()
         {
+            //MelonLogger.Msg(UnlockedHeroes.Count());
             return InGameExt.GetGameModel(InGame.instance).GetHeroWithNameAndLevel(GetMonkey(UnlockedHeroes), 1);
         }
         static internal TowerModel GetRandomSubTower()
@@ -144,10 +149,11 @@ namespace RandomMonkeys.MonkeysRandomGenerator
         {
             var tower = InGameExt.GetGameModel(InGame.instance).GetTower(towerName, path0, path1, path2);
 
-            if ((tower.IsUpgradeUnlocked(0, path0) == false && path0 != 0) || (tower.IsUpgradeUnlocked(1, path1) == false && path0 != 0) || (tower.IsUpgradeUnlocked(2, path2) == false && path0 != 0))
-            {
-                return GetTowerModel(tier);
-            }
+
+            //if ((tower.IsUpgradeUnlocked(0, path0) == false && path0 != 0) || (tower.IsUpgradeUnlocked(1, path1) == false && path0 != 0) || (tower.IsUpgradeUnlocked(2, path2) == false && path0 != 0))
+            //{
+            //    return GetTowerModel(tier);
+            //}
 
             //MelonLogger.Msg($"{tower.IsUpgradeUnlocked(0, path0)}, {tower.IsUpgradeUnlocked(1, path1)}, {tower.IsUpgradeUnlocked(2, path2)}");
 
@@ -273,6 +279,7 @@ namespace RandomMonkeys.MonkeysRandomGenerator
                 return (int)randomMonkeyCosts[tier];
             }
 
+            //once 
             firstgetRandomMonkeyCostCall = true;
 
             List<float> monkeyCosts = new List<float> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -298,7 +305,7 @@ namespace RandomMonkeys.MonkeysRandomGenerator
                         }
                     }
 
-                    if (tower.IsHero())
+                    if (tower.IsHero() && !tower.IsSubEntity && tower.name != "Sheriff")
                     {
                         //MelonLogger.Msg($"hero: {tower.name}");
                         GeneratorMonkeys.AllHeroes.Add(tower.name);
@@ -315,10 +322,15 @@ namespace RandomMonkeys.MonkeysRandomGenerator
 
                 if (tower.isSubTower && tower.isBakable)
                 {
-                    //MelonLogger.Msg($"sub: {tower.name}");
+                   // MelonLogger.Msg($"sub: {tower.name}");
 
                     GeneratorMonkeys.AllSubTowers.Add(tower.name);
                     monkeyCosts[Options.subTowerIndex] += tower.cost;
+
+                }
+                else if (tower.isSubTower)
+                {
+                    //MelonLogger.Msg($"not sub: {tower.name}");
                 }
 
                 //add this
@@ -341,7 +353,7 @@ namespace RandomMonkeys.MonkeysRandomGenerator
             randomMonkeyCosts[5] = randomMonkeyCosts[4] + (monkeyCosts[5] / numberOfTiers);
 
 
-            randomMonkeyCosts[Options.heroIndex] = (monkeyCosts[Options.heroIndex] / AllHeroes.Count) * 3;
+            randomMonkeyCosts[Options.heroIndex] = (monkeyCosts[Options.heroIndex] / AllHeroes.Count) * 4;
             randomMonkeyCosts[Options.subTowerIndex] = (monkeyCosts[Options.subTowerIndex] / AllSubTowers.Count);
             randomMonkeyCosts[Options.paragonIndex] = monkeyCosts[Options.paragonIndex] / AllParagons.Count;
 

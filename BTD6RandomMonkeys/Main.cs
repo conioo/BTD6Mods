@@ -46,13 +46,13 @@ namespace RandomMonkeys.BloonsMod
             slider = true,
         };
 
-        internal static readonly ModSettingBool OnlyRandomMonkeysInShop = true;
+        internal static readonly ModSettingBool OnlyRandomMonkeysInShop = false;
+
+        internal static readonly ModSettingBool OnlyRandomMonkeysInShop_AddBananaFarmToShop = false;
 
         internal static readonly ModSettingBool AddRandomHeroToShop = true;
 
-        internal static readonly ModSettingBool HideUpgrades = true;
-
-        internal static readonly ModSettingBool AddBananaFarmToShop = true;
+        internal static readonly ModSettingBool HideUpgrades = false;
 
         internal static readonly ModSettingHotkey RandomTier0 = new ModSettingHotkey(KeyCode.F1);
         internal static readonly ModSettingHotkey RandomTier1 = new ModSettingHotkey(KeyCode.F2);
@@ -205,53 +205,63 @@ namespace RandomMonkeys.BloonsMod
                 {
                     if (GeneratorMonkeys.AllMonkeys.Contains(tower.name))
                     {
-                        if (tower?.IsTowerUnlocked() == true)
-                        {
-                            GeneratorMonkeys.UnlockedMonkeys.Add(tower.name);
-                        }
-                        else
-                        {
-                            //MelonLogger.Msg($"not unlocked: {tower.name}");
-                        }
+                        GeneratorMonkeys.UnlockedMonkeys.Add(tower.name);
+
+
+                        //if (tower?.IsTowerUnlocked() == true)
+                        //{
+                        //    GeneratorMonkeys.UnlockedMonkeys.Add(tower.name);
+                        //}
+                        //else
+                        //{
+                        //    //MelonLogger.Msg($"not unlocked: {tower.name}");
+                        //}
                     }
                     //tower.GetUpgrade(0, 0).IsUpgradeUnlocked();
                     if (GeneratorMonkeys.AllHeroes.Contains(tower.name))
                     {
-                        if (tower?.IsHeroUnlocked() == true)
-                        {
-                            GeneratorMonkeys.UnlockedHeroes.Add(tower.name);
-                        }
-                        else
-                        {
-                            //MelonLogger.Msg($"not unlocked: {tower.name}");
-                        }
+                        MelonLogger.Msg(tower.name);
+
+                        GeneratorMonkeys.UnlockedHeroes.Add(tower.name);
+
+
+                        //if (tower?.IsHeroUnlocked() == true)
+                        //{
+                        //    GeneratorMonkeys.UnlockedHeroes.Add(tower.name);
+                        //}
+                        //else
+                        //{
+                        //    //MelonLogger.Msg($"not unlocked: {tower.name}");
+                        //}
                     }
 
                     if (GeneratorMonkeys.AllParagons.Contains(tower.name))
                     {
-                        if (Game.instance.model.GetParagonUpgrade(tower.name).IsUpgradeUnlocked() == true)
-                        {
-                            //MelonLogger.Msg($"paragon: {tower.name}, {Game.instance.model.GetParagonUpgrade(tower.name).cost}");
-                            GeneratorMonkeys.UnlockedParagons.Add(tower.name);
-                        }
-                        else
-                        {
-                            //MelonLogger.Msg($"not unlocked paragon: {tower.name}");
-                        }
+                        GeneratorMonkeys.UnlockedParagons.Add(tower.name);
+
+                        //if (Game.instance.model.GetParagonUpgrade(tower.name).IsUpgradeUnlocked() == true)
+                        //{
+                        //    //MelonLogger.Msg($"paragon: {tower.name}, {Game.instance.model.GetParagonUpgrade(tower.name).cost}");
+                        //}
+                        //else
+                        //{
+                        //    //MelonLogger.Msg($"not unlocked paragon: {tower.name}");
+                        //}
                     }
 
                     if (GeneratorMonkeys.AllSubTowers.Contains(tower.name))
                     {
-                        //if (tower?.IsTowerUnlocked() == true)
-                        if (true)
-                        {
-                            //MelonLogger.Msg($"paragon: {tower.name}, {Game.instance.model.GetParagonUpgrade(tower.name).cost}");
-                            GeneratorMonkeys.UnlockedSubTowers.Add(tower.name);
-                        }
-                        else
-                        {
-                            MelonLogger.Msg($"not unlocked subtower: {tower.name}");
-                        }
+                        GeneratorMonkeys.UnlockedSubTowers.Add(tower.name);
+                        ////if (tower?.IsTowerUnlocked() == true)
+                        //if (true)
+                        //{
+                        //    //MelonLogger.Msg($"paragon: {tower.name}, {Game.instance.model.GetParagonUpgrade(tower.name).cost}");
+                        //    GeneratorMonkeys.UnlockedSubTowers.Add(tower.name);
+                        //}
+                        //else
+                        //{
+                        //    MelonLogger.Msg($"not unlocked subtower: {tower.name}");
+                        //}
                     }
                 }
                 FirstLoaded = false;
@@ -331,75 +341,83 @@ namespace RandomMonkeys.BloonsMod
         {
             if (modelToUse.name.Contains("BTD6RandomMonkeys"))
             {
-                //MelonLogger.Msg(modelToUse.name);
-                if (modelToUse.name.Contains("Tier_0"))
-                {
-                    modelToUse = GeneratorMonkeys.GetTowerModel(0);
-                }
-                else if (modelToUse.name.Contains("Tier_1"))
-                {
-                    modelToUse = GeneratorMonkeys.GetTowerModel(1);
-                }
-                else if (modelToUse.name.Contains("Tier_2"))
-                {
-                    modelToUse = GeneratorMonkeys.GetTowerModel(2);
-                }
-                else if (modelToUse.name.Contains("Tier_3"))
-                {
-                    modelToUse = GeneratorMonkeys.GetTowerModel(3);
-                }
-                else if (modelToUse.name.Contains("Tier_4"))
-                {
-                    modelToUse = GeneratorMonkeys.GetTowerModel(4);
-                }
-                else if (modelToUse.name.Contains("Tier_5"))
-                {
-                    modelToUse = GeneratorMonkeys.GetTowerModel(5);
-                }
-                else if (modelToUse.name.Contains("Tier_AnyLite"))
-                {
-                    modelToUse = GeneratorMonkeys.GetTowerModelAnyLite();
-                }
-                else if (modelToUse.name.Contains("Tier_Any"))
-                {
-                    modelToUse = GeneratorMonkeys.GetTowerModelAny();
-                }
-                else if (modelToUse.name.Contains("RandomHero"))
-                {
-                    modelToUse = GeneratorMonkeys.GetRandomHero();
-                }
-                else if (modelToUse.name.Contains("RandomParagon"))
-                {
-                    modelToUse = GeneratorMonkeys.GetRandomParagon();
-                }
-                else if (modelToUse.name.Contains("RandomSubTower"))
-                {
-                    //List<Model> list = new List<Model>();
+                int limit = 10;
 
-                    //foreach (var behavior in model.behaviors)
-                    //{
-                    //    bool flag = behavior.name != "TowerExpireModel_";
-                    //    if (flag)
-                    //    {
-                    //        list.Add(behavior);
-                    //    }
-                    //}
-                    //towerModel.behaviors = list.ToArray();
+                do
+                {
+                    //MelonLogger.Msg(modelToUse.name);
+                    if (modelToUse.name.Contains("Tier_0"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetTowerModel(0);
+                    }
+                    else if (modelToUse.name.Contains("Tier_1"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetTowerModel(1);
+                    }
+                    else if (modelToUse.name.Contains("Tier_2"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetTowerModel(2);
+                    }
+                    else if (modelToUse.name.Contains("Tier_3"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetTowerModel(3);
+                    }
+                    else if (modelToUse.name.Contains("Tier_4"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetTowerModel(4);
+                    }
+                    else if (modelToUse.name.Contains("Tier_5"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetTowerModel(5);
+                    }
+                    else if (modelToUse.name.Contains("Tier_AnyLite"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetTowerModelAnyLite();
+                    }
+                    else if (modelToUse.name.Contains("Tier_Any"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetTowerModelAny();
+                    }
+                    else if (modelToUse.name.Contains("RandomHero"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetRandomHero();
+                        //MelonLogger.Msg(modelToUse?.name);
+                    }
+                    else if (modelToUse.name.Contains("RandomParagon"))
+                    {
+                        modelToUse = GeneratorMonkeys.GetRandomParagon();
+                    }
+                    else if (modelToUse.name.Contains("RandomSubTower"))
+                    {
+                        //List<Model> list = new List<Model>();
 
-                    //modelToUse = towerModel;
+                        //foreach (var behavior in model.behaviors)
+                        //{
+                        //    bool flag = behavior.name != "TowerExpireModel_";
+                        //    if (flag)
+                        //    {
+                        //        list.Add(behavior);
+                        //    }
+                        //}
+                        //towerModel.behaviors = list.ToArray();
 
-                    modelToUse = GeneratorMonkeys.GetRandomSubTower();
-                    
-                    //MelonLogger.Msg(towerNames[idx]);
-                    //modelToUse = InGameExt.GetGameModel(InGame.instance).GetTower(towerNames[idx++]);
+                        //modelToUse = towerModel;
 
-                    ////string jsonString = JsonSerializer.Serialize(modelToUse);
-                    //string jsonString = JsonUtility.ToJson(modelToUse, prettyPrint: true);
+                        modelToUse = GeneratorMonkeys.GetRandomSubTower();
 
-                    //string filePath = $@"C:\Users\posce\Desktop\opis\{towerNames[idx - 1]}.json";
-                    //File.WriteAllText(filePath, jsonString);
-                }
+                        //MelonLogger.Msg(modelToUse.name);
+                        //modelToUse = InGameExt.GetGameModel(InGame.instance).GetTower(towerNames[idx++]);
+
+                        ////string jsonString = JsonSerializer.Serialize(modelToUse);
+                        //string jsonString = JsonUtility.ToJson(modelToUse, prettyPrint: true);
+
+                        //string filePath = $@"C:\Users\posce\Desktop\opis\{towerNames[idx - 1]}.json";
+                        //File.WriteAllText(filePath, jsonString);
+                    }
+
+                } while (modelToUse is null && --limit > 0);
             }
+
             return true;
         }
     }
@@ -432,7 +450,7 @@ namespace RandomMonkeys.BloonsMod
                     }
                     else
                     {
-                        if(towerName.Contains("BananaFarm") && Main.AddBananaFarmToShop)
+                        if (towerName.Contains("BananaFarm") && Main.OnlyRandomMonkeysInShop_AddBananaFarmToShop)
                         {
                             newTowerDisplayOrder.Add(towerName);
                         }

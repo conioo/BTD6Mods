@@ -12,6 +12,7 @@ using HarmonyLib;
 using Il2CppSystem.Dynamic.Utils;
 using MelonLoader;
 using RandomMonkeys.MonkeysRandomGenerator;
+using Il2CppAssets.Scripts.Models.Profile;
 
 namespace RandomMonkeys.Towers
 {
@@ -26,6 +27,11 @@ namespace RandomMonkeys.Towers
         public override string Portrait => IconName + "-Icon";
 
         public abstract override string Description { get; }
+
+        //public override bool ShouldUnlockTower(ProfileModel profileModel)
+        //{
+        //    return true;
+        //}
         public override int Cost
         {
             get
@@ -48,7 +54,7 @@ namespace RandomMonkeys.Towers
 
             towerModel.areaTypes = newAreaType;
 
-            //towerModel.ApplyDisplay<RandomDisplay>();
+            towerModel.SetDisplay<RandomDisplay>();
         }
 
         public override int GetTowerIndex(List<TowerDetailsModel> towerSet)

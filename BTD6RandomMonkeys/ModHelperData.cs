@@ -2,8 +2,8 @@
 {
     public static class ModHelperData
     {
-        public const string Version = "2.0.2";
-        public const string WorksOnVersion = "49";
+        public const string Version = "2.1.0";
+        public const string WorksOnVersion = "55";
 
 
         public const string Name = "RandomMonkeys";

@@ -7,13 +7,13 @@ namespace RandomMonkeys.Display
 {
     class RandomDisplay : ModDisplay
     {
+        //public override string BaseDisplay => "ea4574f3a35399c4ca37d2ed339fdcee";
         public override string BaseDisplay => "ad073d9875ec542458cf4eae79f3f29c";
         //public override string BaseDisplay => Game.instance.model.GetTower(TowerType.SacrificialTotem).display.AssetGUID;
 
         public override void ModifyDisplayNode(UnityDisplayNode node)
         {
-            SetMeshTexture(node, "RandomDisplay", 1);
-
+            //SetMeshTexture(node, "RandomDisplay", 1);
         }
     }
 }
