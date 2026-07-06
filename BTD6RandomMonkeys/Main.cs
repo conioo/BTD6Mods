@@ -220,7 +220,7 @@ namespace RandomMonkeys.BloonsMod
                     //tower.GetUpgrade(0, 0).IsUpgradeUnlocked();
                     if (GeneratorMonkeys.AllHeroes.Contains(tower.name))
                     {
-                        MelonLogger.Msg(tower.name);
+                        //MelonLogger.Msg(tower.name);
 
                         GeneratorMonkeys.UnlockedHeroes.Add(tower.name);
 

@@ -10,7 +10,7 @@
             Adds new items to customize the playing map.
         </td>
         <td width="11%">
-            <a href="https://github.com/conioo/BTD6Mods/blob/main/BTD6CustomizationItems/BTD6CustomizationItems.dll?raw=true"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
+            <a href="https://raw.githubusercontent.com/conioo/BTD6Mods/main/BTD6CustomizationItems/BTD6CustomizationItems.dll"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
         </td>
     </tr>
     <tr>
@@ -22,7 +22,7 @@
             Adds geraldo helpers to the store.
         </td>
         <td width="11%">
-            <a href="https://github.com/conioo/BTD6Mods/blob/main/BTD6GeraldoHelpersInShop/BTD6GeraldoHelpersInShop.dll?raw=true"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
+            <a href="https://raw.githubusercontent.com/conioo/BTD6Mods/main/BTD6GeraldoHelpersInShop/BTD6GeraldoHelpersInShop.dll"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
         </td>
     </tr>
     <tr>
@@ -34,7 +34,7 @@
             Adds 5 new random monkeys that draw to each tier, additionally adds two fully random monkeys, normal - that draws all tiers, lite - that draws up to tier 4.
         </td>
         <td width="11%">
-            <a href="https://github.com/conioo/BTD6Mods/blob/main/BTD6RandomMonkeys/BTD6RandomMonkeys.dll?raw=true"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
+            <a href="https://raw.githubusercontent.com/conioo/BTD6Mods/main/BTD6RandomMonkeys/RandomMonkeys.dll"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
         </td>
     </tr>
     <tr>
@@ -46,7 +46,7 @@
             Requires Ultimatecrosspathing mod, Adds random monkeys that draw without tier restrictions.
         </td>
         <td width="11%">
-            <a href="https://github.com/conioo/BTD6Mods/blob/main/BTD6RandomMonkeys555/BTD6RandomMonkeys5-5-5.dll?raw=true"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
+            <a href="https://raw.githubusercontent.com/conioo/BTD6Mods/main/BTD6RandomMonkeys555/BTD6RandomMonkeys5-5-5.dll"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
         </td>
     </tr>
     <tr>
@@ -58,7 +58,7 @@
             Adds a new unique monkey that generates disappearing random monkeys around it.
         </td>
         <td width="11%">
-            <a href="https://github.com/conioo/BTD6Mods/blob/main/BTD6RandomMonkeysGenerator/BTD6RandomMonkeysGenerator.dll?raw=true"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
+            <a href="https://raw.githubusercontent.com/conioo/BTD6Mods/main/BTD6RandomMonkeysGenerator/BTD6RandomMonkeysGenerator.dll"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
         </td>
     </tr>
     <tr>
@@ -70,7 +70,7 @@
             Adds a new unique monkey with a paragon.
         </td>
         <td width="11%">
-            <a href="https://github.com/conioo/BTD6Mods/blob/main/BTD6SafeMonkey/BTD6SafeMonkey.dll?raw=true"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
+            <a href="https://raw.githubusercontent.com/conioo/BTD6Mods/main/BTD6SafeMonkey/BTD6SafeMonkey.dll"><img alt="Download" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download_small.png?raw=true"></a>
         </td>
     </tr>
 </table>
